@@ -150,13 +150,10 @@ a, .u-fauxlink {
 
     }
     .element--immersive {
-      max-width: initial;
-      
-      background: white;
-
+    	max-width: initial;
     	margin-left: 0 !important;
         margin-bottom: 48px !important;
-        //font-size: 0;
+        font-size: 0;
 
         @include mq(wide) {
             width: 1260px;

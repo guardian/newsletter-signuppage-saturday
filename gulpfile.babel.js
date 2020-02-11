@@ -127,7 +127,7 @@ const buildJS = () => {
 
 const buildCSS = () => {
   return src("atoms/**/client/css/*.scss")
-  .pipe(replace('<%= path %>', path))
+  .pipe(replace('<%= path %>', assetPath))
     .pipe(sass({
       includePaths: [
         path.resolve(__dirname, 'shared/css')
@@ -195,7 +195,8 @@ const serve = () => {
       'server': {
           'baseDir': ".build"
       },
-      'port': 8000
+      'port': 8000,
+      'open': false
   });
 
   watch(["atoms/**/*", "shared/**/*", "!**/*.scss"], series(build, local));

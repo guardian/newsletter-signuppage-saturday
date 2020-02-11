@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parse": "babel-node shared/server/parse.js",
+    "parse_transposed": "babel-node shared/server/parse_transposed.js",
+    "parse_total": "babel-node shared/server/parse_total.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "core-js": "^3.3.3",
-    "d3": "^5.12.0",
+    "d3": "^5.15.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "^4.0.1",
@@ -46,6 +49,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@babel/node": "^7.8.4",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
@@ -53,9 +57,12 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
+    "csv-parse": "^4.8.5",
     "gulp-replace": "^1.0.0",
     "mkdirp": "^0.5.1",
     "request-promise": "^4.2.5",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "topojson": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "world-atlas": "^2.0.2"
   }
 }
