@@ -1,0 +1,24 @@
+@import "template";
+
+
+
+
+
+.live-links {
+    &__header {
+        &__headline {
+            background-color: white;
+            border-top: 4px solid #c70000;
+            color: #121212;
+            font-weight: 700;
+
+            .live-now {
+                color: #c70000;
+
+                &::before {
+                    background-color: #c70000;
+                }
+            }
+        }
+    }
+}
