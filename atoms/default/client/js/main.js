@@ -2,7 +2,8 @@ var el = document.createElement('script');
 el.src = '<%= atomPath %>/app.js';
 document.body.appendChild(el);
 
-
+// import template from "../../server/templates/main.html";
+// document.getElementById("gd-live-blogs").innerHTML = template;
 
 setTimeout(() => {
   if (window.resize) {

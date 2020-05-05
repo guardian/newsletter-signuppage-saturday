@@ -33,6 +33,7 @@
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.0",
     "preact": "^10.0.4",
+    "raw-loader": "^4.0.1",
     "require-uncached": "^2.0.0",
     "rollup": "^1.25.2",
     "rollup-plugin-babel": "^4.3.3",
@@ -56,6 +57,7 @@
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
     "gulp-replace": "^1.0.0",
     "mkdirp": "^0.5.1",
+    "ophan-tracker-js": "^1.3.20",
     "request-promise": "^4.2.5",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
