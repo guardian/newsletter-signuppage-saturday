@@ -1,9 +1,34 @@
 console.log("working");
+console.log("v1.16");
 
 import "ophan-tracker-js";
 // fixes amp issue
 // import template from "../../server/templates/main.html";
 // import template from "raw-loader!./../templates/main.html";
+
+
+
+
+function ampCheck() {
+  var amp = window.parent.AMP;
+  cosole.log(amp);
+  setTimout(function () {
+    console.log(amp, 'timeout');
+  }, 1000)
+}
+ampCheck();
+
+// if (window.parent.AMP) {
+//   console.log("we're amp")
+//   document.getElementById('livelinks').style.display = 'none'
+
+// } else {
+//   console.log("we're wwww")
+//   document.getElementById('livelinks').style.display = 'block'
+// }
+
+// window.parent.documentElement.hasAttribute('amp-version')
+
 
 
 // fetch("http://mockbin.com/request?foo=bar&foo=baz").then(console.log);
@@ -56,4 +81,6 @@ fetch(
       .join("<strong>- business live</strong>");
   });
 
-console.log("v1.9");
+
+
+console.log("THE END");

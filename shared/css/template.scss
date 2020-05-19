@@ -117,3 +117,15 @@
         opacity: 1
     }
 }
+
+
+.live-links {
+
+    .android &,
+    .ios & {
+        display: none !important;
+        // overflow: hidden;
+        // margin: 0;
+        // padding: 0;
+    }
+}
