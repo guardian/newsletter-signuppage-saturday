@@ -5,6 +5,16 @@
 @import "palette";
 // @import "enhancer";
 
+$mq-breakpoints: (mobile: 320px,
+    mobileMedium: 375px,
+    mobileLandscape: 480px,
+    phablet: 660px,
+    tablet: 740px,
+    desktop: 980px,
+    leftCol: 1140px,
+    wide: 1300px,
+);
+
 .interactive-atom {
     margin: 0;
     padding: 0;
@@ -39,8 +49,6 @@
             border-top: 1px solid #dcdcdc;
             line-height: 115%;
             margin-bottom: 4px;
-            padding-left: 4px;
-            width: 98%;
             display: flex;
             justify-content: space-between;
             text-decoration: none;
@@ -65,17 +73,53 @@
             }
         }
 
+        .left-content {
+            display: flex;
+        }
+
+        .food-image {
+            width: 100px;
+            height: 80px;
+            margin-right: 8px;
+
+            @include mq(phablet) {
+                width: 130px;
+                height: 90px;
+            }
+
+            &__1 {
+                background-image: url('https://media.guim.co.uk/9edad8db29831185ec68ee0e2a4c9cc72130d8b0/527_1270_3729_3730/500.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
         .blog-type {
             font-family: "Guardian Headline Full";
-            font-size: 20px;
+            font-size: 17px;
             line-height: 115%;
             font-weight: 300;
             margin-top: 1px;
             display: inline-block;
-            width: 85%;
+            width: 140px;
+
 
             color: #121212 !important;
             text-decoration: none;
+
+            @include mq(mobileMedium) {
+                width: 200px;
+            }
+
+            @include mq(mobileLandscape) {
+                width: 270px;
+            }
+
+            @include mq(phablet) {
+                font-size: 20px;
+                width: 400px;
+            }
 
             &:hover {
                 text-decoration: none;
