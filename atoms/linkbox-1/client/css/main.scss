@@ -5,15 +5,6 @@
 @import "palette";
 // @import "enhancer";
 
-$mq-breakpoints: (mobile: 320px,
-    mobileMedium: 375px,
-    mobileLandscape: 480px,
-    phablet: 660px,
-    tablet: 740px,
-    desktop: 980px,
-    leftCol: 1140px,
-    wide: 1300px,
-);
 
 .interactive-atom {
     margin: 0;
@@ -36,7 +27,7 @@ $mq-breakpoints: (mobile: 320px,
             line-height: 115%;
             color: #bb3b80;
             margin: 0;
-            padding: 2px 0 12px 4px;
+            padding: 2px 0 12px 0;
         }
     }
 
@@ -48,7 +39,6 @@ $mq-breakpoints: (mobile: 320px,
         .content-block {
             border-top: 1px solid #dcdcdc;
             line-height: 115%;
-            margin-bottom: 4px;
             display: flex;
             justify-content: space-between;
             text-decoration: none;
@@ -78,20 +68,44 @@ $mq-breakpoints: (mobile: 320px,
         }
 
         .food-image {
-            width: 100px;
-            height: 80px;
+            width: 80px;
+            height: 90px;
+            margin-top: 4px;
             margin-right: 8px;
+            margin-bottom: 8px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            @include mq(mobileMedium) {
+                width: 100px;
+                height: 70px;
+            }
+
 
             @include mq(phablet) {
                 width: 130px;
                 height: 90px;
             }
 
-            &__1 {
-                background-image: url('https://media.guim.co.uk/9edad8db29831185ec68ee0e2a4c9cc72130d8b0/527_1270_3729_3730/500.jpg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+            // &__1 {
+            //     background-image: url('https://media.guim.co.uk/9edad8db29831185ec68ee0e2a4c9cc72130d8b0/527_1270_3729_3730/500.jpg');
+            // }
+
+            &__2 {
+                background-image: url('https://media.guim.co.uk/50b5f7755b08c3270b30ad4ae4874585a2340250/815_1687_4676_4676/500.jpg');
+            }
+
+            &__3 {
+                background-image: url('https://media.guim.co.uk/bcdb61c824c4468ff1295798fd44094975c17209/951_92_2220_2220/500.jpg');
+            }
+
+            &__4 {
+                background-image: url('https://media.guim.co.uk/f52a2daf0c30a812a0756a59e4dc3f82ba7e62ca/0_0_3008_3008/500.jpg');
+            }
+
+            &__5 {
+                background-image: url('https://media.guim.co.uk/5980124d179a3c23e5fb7b5ff7ecb1e07ac1cbcd/658_0_3845_3845/500.jpg');
             }
         }
 
@@ -99,17 +113,18 @@ $mq-breakpoints: (mobile: 320px,
             font-family: "Guardian Headline Full";
             font-size: 17px;
             line-height: 115%;
-            font-weight: 300;
+            font-weight: 400;
             margin-top: 1px;
             display: inline-block;
-            width: 140px;
+            width: 167px;
+
 
 
             color: #121212 !important;
             text-decoration: none;
 
             @include mq(mobileMedium) {
-                width: 200px;
+                width: 190px;
             }
 
             @include mq(mobileLandscape) {
