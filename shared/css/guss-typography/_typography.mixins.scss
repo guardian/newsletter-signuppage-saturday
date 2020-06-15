@@ -205,50 +205,6 @@
 }
 
 /**
- * Body Heading family and weight properties.
- *
- * @requires {variable} $f-serif-text
- *
- * @group typography
- */
-
-@mixin f-bodyHeading {
-    font-family: $f-serif-text;
-    font-weight: bold;
-}
-
-
-/**
- * Body Heading typography settings.
- *
- * @param {Number} $level
- * @param {Boolean} $size-only
- *
- * @example
- *  // Output all properties (font-size, line-height, family, weight)
- *  @include fs-bodyHeading(3);
- *  
- *  // Output font-size and line-height only
- *  @include fs-bodyHeading(3, $size-only: true);
- *
- * @requires {function} get-font-size
- * @requires {function} get-line-height
- * @requires {mixin} font-size
- * @requires {mixin} f-bodyHeading
- *
- * @group typography
- */
-
-@mixin fs-bodyHeading($level, $size-only: false) {
-    @include font-size(get-font-size(bodyHeading, $level), get-line-height(bodyHeading, $level));
-
-    @if $size-only==false {
-        @include f-bodyHeading;
-    }
-}
-
-
-/**
  * Body Copy family property.
  *
  * @requires {variable} $f-serif-text
