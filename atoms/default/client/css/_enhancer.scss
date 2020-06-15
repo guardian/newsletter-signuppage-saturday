@@ -142,6 +142,15 @@ a,
   }
 }
 
+.meta__numbers {
+  @include mq(desktop) {
+    margin-right: calc(960px - 620px);
+  }
+  @include mq(wide) {
+    margin-right: calc(1040px - 620px);
+  }
+}
+
 .content__meta-container {
   @include mq(desktop) {
     width: 960px !important;
