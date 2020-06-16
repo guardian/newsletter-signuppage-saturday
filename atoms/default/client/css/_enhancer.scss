@@ -26,11 +26,6 @@
   }
 }
 
-.headline {
-  font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
-  padding-top: 0px;
-}
-
 .content__standfirst,
 .standfirst, .content--interactive .content__standfirst {
   @include fs-headline(1);
