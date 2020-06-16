@@ -8,24 +8,25 @@
   &::before {
     content: "";
     display: block;
-    background-image: url("<%= path %>/assets/header-image.png");
+    background-image: url("<%= path %>../../assets/header-image.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 10px 0px;
+    background-position: left 0px bottom 0px;
     height: 32vw;
-    padding-top: 5px;
-    margin-top: 10px;
+    margin-top: 0px;
     @include mq(tablet) {
       border-top: 0;
       height: 300px;
     }
 
     @include mq(desktop) {
-      margin-left: -10px;
-      width: 970px;
+      width: 940px;
+    }
+    @include mq(leftCol) {
+      width: 950px;
     }
     @include mq(wide) {
-      width: 1050px;
+      width: 1030px;
     }
   }
   &::after {
@@ -34,7 +35,7 @@
     background-color: $neutral-86;
     position: absolute;
     height: 1px;
-    top: calc(32vw + 18px);
+    top: calc(32vw);
     left: -10px;
 
     @include mq(mobileLandscape) {
@@ -43,7 +44,7 @@
     }
 
     @include mq(tablet) {
-      top: 310px;
+      top: 300px;
     }
     @include mq(desktop) {
       width: 980px;
@@ -53,7 +54,6 @@
       width: 970px;
     }
     @include mq(wide) {
-      left: -10px;
       width: 1050px;
     }
   }
@@ -63,12 +63,14 @@
   @include fs-titlepiece(1);
   font-size: 36px;
   position: relative;
+  padding-top: 0;
   @include mq(mobileMedium) {
     @include fs-titlepiece(1);
   }
 
   @include mq(tablet) {
     @include fs-titlepiece(2);
+
   }
 }
 
