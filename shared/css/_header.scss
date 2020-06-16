@@ -61,7 +61,7 @@
 
 .content--interactive .content__main-column .content__headline {
   @include fs-titlepiece(1);
-  font-size: 34px;
+  font-size: 36px;
   position: relative;
   @include mq(mobileMedium) {
     @include fs-titlepiece(1);
