@@ -64,7 +64,7 @@
   font-size: 34px;
   position: relative;
   @include mq(mobileMedium) {
-    @include fs-titlepiece(2);
+    @include fs-titlepiece(1);
   }
 
   @include mq(tablet) {
@@ -89,10 +89,6 @@
   }
   @include mq(tablet) {
     max-width: 540px;
-  }
-  @include mq(desktop) {
-    @include fs-headline(3);
-    font-weight: 200;
   }
 }
 

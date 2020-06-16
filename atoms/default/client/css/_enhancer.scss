@@ -36,9 +36,8 @@
 
 .content__standfirst,
 .standfirst, .content--interactive .content__standfirst {
+  @include fs-headline(2);
   font-weight: 200;
-  font-size: 22px;
-  line-height: 28px;
   margin-top: 24px;
   max-width: 90%;
   margin-bottom: 48px;
@@ -49,8 +48,8 @@
     max-width: 540px;
   }
   @include mq(desktop) {
-    font-size: 24px;
-    line-height: 28px;
+    @include fs-headline(3);
+    font-weight: 200;
   }
 }
 
@@ -212,15 +211,15 @@ a,
 
   // & > h2 {
   //   font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia;
-  //   font-size: 28px;
-  //   line-height: 1.36;
+  //   font-size: 20px !important;
+  //   line-height: 115% !important;
   //   font-weight: 700;
   //   color: $neutral-7;
   //   margin-top: 36px;
   //   margin-bottom: 6px;
 
-  //   @include mq($until: desktop) {
-  //     font-size: 24px;
+  //   @include mq(desktop) {
+  //     font-size: 22px !important;
   //   }
   // }
   .element--immersive {
