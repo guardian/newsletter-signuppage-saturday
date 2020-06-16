@@ -20,9 +20,8 @@
     font-weight: 700;
   }
 
-  @include mq(tablet) {
+  @include mq(desktop) {
     @include fs-headline(7);
-    font-weight: 700;
   }
 }
 
@@ -220,13 +219,13 @@ a,
   }
 
     & > h2 {
-    @include fs-header(2);
+    @include fs-header(1);
     font-weight: 700;
     margin-top: 36px;
     margin-bottom: 6px;
 
     @include mq(desktop) {
-      @include fs-header(3);
+      @include fs-header(2);
     }
   }
 
