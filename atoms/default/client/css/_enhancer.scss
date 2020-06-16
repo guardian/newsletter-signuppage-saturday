@@ -33,7 +33,7 @@
 
 .content__standfirst,
 .standfirst, .content--interactive .content__standfirst {
-  @include fs-headline(2);
+  @include fs-headline(1);
   font-weight: 200;
   margin-top: 24px;
   max-width: 90%;
@@ -45,7 +45,7 @@
     max-width: 540px;
   }
   @include mq(desktop) {
-    @include fs-headline(3);
+    @include fs-headline(2);
     font-weight: 200;
   }
 }
