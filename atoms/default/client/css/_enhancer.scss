@@ -168,22 +168,6 @@ a,
     }
   }
 
-  & > p {
-    font-size: 18px;
-
-    strong {
-      background-color: none;
-      box-shadow: none;
-    }
-
-    sub {
-      bottom: 0px;
-      font-size: 100%;
-      font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia;
-      font-weight: 700;
-    }
-  }
-
     & > h2 {
     @include fs-header(1);
     font-weight: 700;
