@@ -142,3 +142,42 @@
         }
     }
 }
+
+
+
+@media (prefers-color-scheme: dark) {
+    .live-links {
+        .ios & {
+            background-color: #121212;
+            border-top: 1px solid #bb3b80;
+            border-bottom: 1px solid #bb3b80;
+
+            &__header {
+                &__headline {
+                    color: #f37abc;
+                }
+            }
+
+            .content-block {
+                border-top: 1px solid #dcdcdc;
+                color: #dcdcdc !important;
+
+                svg circle {
+                    stroke: #dcdcdc;
+                }
+
+                svg path {
+                    stroke: #dcdcdc;
+                }
+
+                &:hover svg circle {
+                    stroke: #bb3b80;
+                }
+
+                &:hover svg path {
+                    fill: #bb3b80;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import "../../../linkbox-2/client/js/node_modules/ophan-tracker-js";
+import "ophan-tracker-js";
 
 var urlGetter = window.parent.location;
 // var linkOne = document.querySelector(".live-links__content__one");
