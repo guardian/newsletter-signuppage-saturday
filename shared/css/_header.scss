@@ -152,7 +152,6 @@
 .content__main,
 .content__head {
   position: relative;
-
   &:before {
     position: absolute;
     top: 0;
@@ -213,6 +212,6 @@ a,
   }
 
   .headline:after {
-    top: calc(32vw + 18px);
+    top: calc(32vw);
   }
 }

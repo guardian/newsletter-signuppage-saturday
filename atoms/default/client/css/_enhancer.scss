@@ -158,12 +158,6 @@ a,
   .element-interactive,
   .element-atom,
   .element-video {
-    // strong {
-    //   background-color: $highlight_yellow;
-    //   box-shadow: 4px 0 0 $highlight_yellow, -4px 0 0 $highlight-yellow;
-    //   padding-bottom: .1em;
-    // }
-
     max-width: 620px;
 
     @include mq(leftCol) {
