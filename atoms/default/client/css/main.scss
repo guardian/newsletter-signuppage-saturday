@@ -53,6 +53,9 @@ $textColor: #121212;
 
 .#{$containerName} {
   // padding: 0 12px;
+  @include mq(leftCol) {
+    padding-top: 86px;
+  }
 
   &__wrapper {
     padding: 0 12px;
@@ -64,6 +67,9 @@ $textColor: #121212;
 
     @include mq(desktop) {
       padding: 0 20px;
+    }
+    @include mq(leftCol) {
+      margin-top: -20px;
     }
   }
 
@@ -84,8 +90,15 @@ $textColor: #121212;
 
     &__covers {
       position: absolute;
-      top: 35vh;
-      left: 50vw;
+      top: 50%;
+      left: 50%;
+      width: 240px;
+      height: 240px;
+      transform: translate(-50%, -60%);
+      @include mq(desktop) {
+        width: 500px;
+        height: 500px;
+      }
 
       &__image {
         position: absolute;
@@ -93,12 +106,9 @@ $textColor: #121212;
         left: 0;
         width: 240px;
         height: 240px;
-        transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
         box-shadow: 2px 3px 10px 0px rgba($color: #121212, $alpha: 0.2);
-
-        &:nth-child(odd) {
-          transform: rotate(5deg) translate(-55%, -45%);
-        }
+        transition: transform 0.5s;
 
         @include mq(desktop) {
           width: 500px;
@@ -241,7 +251,7 @@ $textColor: #121212;
 
       @include mq(leftCol) {
         width: 8.75rem;
-        top: 0px;
+        top: 85px;
       }
 
       @include mq(wide) {
@@ -583,6 +593,8 @@ $textColor: #121212;
       width: 100%;
       margin-top: 50px;
 
+      animation: height 3s;
+
       background-image: repeating-linear-gradient(
         to bottom,
         #dcdcdc,
@@ -628,8 +640,11 @@ $textColor: #121212;
     &__nine-content,
     &__ten-content,
     &__eleven-content {
-      height: 400px;
+      // height: 400px;
+      max-height: 400px;
       overflow: hidden;
+
+      // transition: max-height 3s;
 
       @include mq(desktop) {
         height: 318px;
@@ -638,6 +653,8 @@ $textColor: #121212;
 
       .open & {
         height: auto !important;
+        max-height: 4000px;
+        transition: max-height 1.5s;
       }
     }
 
