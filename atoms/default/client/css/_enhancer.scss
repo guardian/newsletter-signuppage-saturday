@@ -169,13 +169,13 @@ a,
   }
 
     & > h2 {
-    @include fs-header(1);
+    @include fs-header(2);
     font-weight: 700;
     margin-top: 36px;
     margin-bottom: 6px;
 
     @include mq(desktop) {
-      @include fs-header(2);
+      @include fs-header(3);
     }
   }
 
@@ -219,12 +219,11 @@ a,
   .byline {
       a {
       @include fs-header(1);
-      font-size: 17px;
       font-weight: 700;
     }
   }
   h2 {
-    @include fs-header(1);
+    @include fs-header(2);
     font-weight: 700;
     margin-top: 36px;
     margin-bottom: 6px;
