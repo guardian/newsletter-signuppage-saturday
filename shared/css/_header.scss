@@ -206,12 +206,36 @@ a,
   .article__header .headline {
     padding: 4px 12px 30px 12px;
   }
+  .headline {
+    @include fs-headline(5);
+    font-weight: 700;
+  
+    @include mq(mobileMedium) {
+      @include fs-headline(6);
+      font-weight: 700;
+    }
+  }
+  .headline:after {
+    top: calc(32vw + 10px);
+    width: calc(100% + 10px);
+  }
   .standfirst {
+    @include fs-headline(1);
+    font-weight: 200;
     margin-bottom: 20px;
     margin-top: 0px;
   }
-
-  .headline:after {
-    top: calc(32vw);
+  .byline {
+      a {
+      @include fs-header(1);
+      font-size: 17px;
+      font-weight: 700;
+    }
+  }
+  h2 {
+    @include fs-header(1);
+    font-weight: 700;
+    margin-top: 36px;
+    margin-bottom: 6px;
   }
 }

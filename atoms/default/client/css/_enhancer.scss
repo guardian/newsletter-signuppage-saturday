@@ -198,3 +198,35 @@ a,
 .content--interactive:not(.paid-content) .element-interactive {
   background-color: #fff;
 }
+
+.ios,
+.android {
+  .headline {
+    @include fs-headline(5);
+    font-weight: 700;
+  
+    @include mq(mobileMedium) {
+      @include fs-headline(6);
+      font-weight: 700;
+    }
+  }
+  .standfirst {
+    @include fs-headline(1);
+    font-weight: 200;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  .byline {
+      a {
+      @include fs-header(1);
+      font-size: 17px;
+      font-weight: 700;
+    }
+  }
+  h2 {
+    @include fs-header(1);
+    font-weight: 700;
+    margin-top: 36px;
+    margin-bottom: 6px;
+  }
+}
