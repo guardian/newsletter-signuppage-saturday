@@ -1,12 +1,19 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+
 <div class="interactive-wrapper">
     <div class="content-top">
         {{#header}}
         <div class="all-reviews__header">
             
             <div class="all-reviews__header__covers">
-            {{#content}}
-                <img class="all-reviews__header__covers__image" id="albumCovers" src="{{imageurl}}">
-            {{/content}}
+            
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {{#content}}
+                    <img class="all-reviews__header__covers__image swiper-slide" id="albumCovers" src="{{imageurl}}">
+                    {{/content}}
+                </div>
+            </div>
             </div>
             
             
@@ -156,10 +163,10 @@
                                     <p class="all-reviews__sections__albumname">{{albumname}}</p>
                                 </div>
                             </div>
-                            <div class="all-reviews__sections__song">{{{spotifylink}}}
-                                <!-- <div class="playeButton"></div>
-              <audio controls="false" class="player" src=""></audio> -->
-                            </div>
+                            <!-- <div >{{{spotifylink}}} -->
+                                <iframe Access-Control-Allow-Origin="*" class="all-reviews__sections__song" src="{{{spotifylink}}}" width="100%" height="80px" frameborder="0"
+                                    allowtransparency="true" allow="encrypted-media"></iframe>
+                            <!-- </div> -->
                             <p class="all-reviews__sections__paragraph">{{{paragraph}}}</p>
                         </div>
                         <div class="all-reviews__sections__{{classnumber}}-button open-button accordion-{{classnumber}}"

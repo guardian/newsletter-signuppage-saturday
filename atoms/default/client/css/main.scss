@@ -79,41 +79,43 @@ $textColor: #121212;
   }
 
   &__header {
-    height: 93vh;
+    height: 480px;
     width: 100vw;
     background-color: #fbf6ef;
     position: relative;
+    padding-top: 20px;
+
+    @include mq(phablet) {
+      height: 450px;
+    }
+
+    @include mq(tablet) {
+      height: 420px;
+    }
 
     @include mq(desktop) {
-      height: 80vh;
+      height: 440px;
+    }
+
+    @include mq(wide) {
+      height: 460px;
     }
 
     &__covers {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 240px;
-      height: 240px;
-      transform: translate(-50%, -60%);
-      @include mq(desktop) {
-        width: 500px;
-        height: 500px;
+      .swiper-container {
+        width: 100vw;
+        height: 320px;
+        padding-top: 10px;
+
+        .swiper-slide {
+          width: 300px !important;
+          height: 300px;
+        }
       }
 
       &__image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 240px;
-        height: 240px;
-        // transform: translate(-50%, -50%);
         box-shadow: 2px 3px 10px 0px rgba($color: #121212, $alpha: 0.2);
         transition: transform 0.5s;
-
-        @include mq(desktop) {
-          width: 500px;
-          height: 500px;
-        }
       }
     }
 
@@ -124,23 +126,27 @@ $textColor: #121212;
       font-weight: 900;
       // color: #a1845c !important;
       position: absolute;
-      bottom: 18vh;
-      bottom: 17vh;
+      bottom: -30px;
       margin-left: 10px;
       color: #121212 !important;
 
       @include mq(phablet) {
-        margin-left: 10px;
+        margin-left: 0;
+        bottom: -40px;
+      }
+
+      @include mq(tablet) {
+        margin-left: 0px;
+        bottom: -30px;
       }
 
       @include mq(desktop) {
-        margin-left: 0;
+        margin-left: 10px;
       }
 
       @include mq(leftCol) {
         position: absolute;
-        // top: 4px;
-        bottom: -71vh;
+        bottom: -42px;
         margin-left: 10px;
       }
     }
@@ -168,16 +174,24 @@ $textColor: #121212;
         line-height: 105%;
         // margin-bottom: 10px;
         position: absolute;
-        bottom: -100vh;
+        bottom: -200px;
         background-color: #121212;
         margin-left: 0;
         color: white;
-        padding: 0 10px 40px 10px;
+        padding: 0 0px 40px 10px;
+
+        @include mq(phablet) {
+          bottom: -165px;
+        }
+
+        @include mq(tablet) {
+          bottom: -155px;
+        }
 
         @include mq(desktop) {
-          width: 100%;
+          width: 620px;
           font-size: 40px;
-          bottom: -85vh;
+          bottom: -174px;
           margin-left: 10px;
         }
       }
@@ -243,6 +257,11 @@ $textColor: #121212;
         @include mq(leftCol) {
           display: inline-block !important;
         }
+      }
+
+      @include mq(phablet) {
+        width: calc(100% - 26px);
+        margin-left: 12px;
       }
 
       @include mq(desktop) {
@@ -356,6 +375,17 @@ $textColor: #121212;
         position: absolute;
         top: 0;
         margin-left: -10px;
+      }
+      &:nth-last-child(1) {
+        &:before {
+          content: "";
+          width: 1px;
+          height: 110%;
+          background-color: $thirdColor;
+          position: absolute;
+          top: 0;
+          margin-left: -10px;
+        }
       }
     }
 
@@ -565,6 +595,14 @@ $textColor: #121212;
       }
     }
 
+    &__song {
+      margin-top: 10px;
+
+      .at {
+        background: #121212 !important;
+      }
+    }
+
     figcaption {
       display: none;
     }
@@ -647,7 +685,7 @@ $textColor: #121212;
       // transition: max-height 3s;
 
       @include mq(desktop) {
-        height: 318px;
+        height: 390px;
         // padding-right: 10px;
       }
 
@@ -668,6 +706,7 @@ $textColor: #121212;
       font-weight: 600;
       color: #ffffff;
       background-color: #a1845c;
+      background-color: #121212;
       margin-top: 16px;
       margin-bottom: -20px;
 

@@ -1,51 +1,3 @@
-// header animation
-const allCovers = document.querySelector(".all-reviews__header__covers");
-const albumCovers = document.querySelectorAll(
-  ".all-reviews__header__covers__image"
-);
-let currentCover = 0;
-let z = 1;
-
-// move covers on load
-allCovers.addEventListener("load", loadMove());
-
-function loadMove() {
-  albumCovers.forEach((cover) => {
-    const x = 50 * Math.random() - 25;
-    const r = 10 * Math.random() - 5;
-    const y = 50 * Math.random() - 25;
-    cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
-  });
-}
-
-allCovers.addEventListener("mouseover", function () {
-  albumCovers.forEach((cover) => {
-    const x = 50 * Math.random() - 25;
-    const r = 10 * Math.random() - 5;
-    const y = 50 * Math.random() - 25;
-    cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
-  });
-});
-
-allCovers.addEventListener("mouseout", function () {
-  albumCovers.forEach((cover) => {
-    const x = 50 * Math.random() - 25;
-    const r = 10 * Math.random() - 5;
-    const y = 50 * Math.random() - 25;
-    cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
-  });
-});
-
-// move covers to top on click
-allCovers.addEventListener("click", function () {
-  currentCover = currentCover + 1;
-  if (currentCover > albumCovers.length - 1) {
-    currentCover = 0;
-  }
-  z = z + 1;
-  albumCovers[currentCover].style.zIndex = z;
-});
-
 // open and close containers
 const defaultHeight = "300px";
 const openedHeight = "100%";
@@ -58,19 +10,102 @@ const openButtons = document.querySelectorAll(".open-button");
 // for (i = 0; i < openButtons.length; i++)
 
 for (var i = 0; i < openButtons.length; i++) {
-  openButtons[i].addEventListener("click", function () {
-    var openMe = this.parentNode;
-    openMe.classList.toggle("open");
-    this.classList.toggle("open");
-    console.log(this.classList);
-    if (this.classList.contains("open")) {
-      this.innerHTML = readLess;
-    } else {
-      this.innerHTML = readMore;
-      openMe.scrollIntoView();
-    }
-  });
+    openButtons[i].addEventListener("click", function () {
+        var openMe = this.parentNode;
+        openMe.classList.toggle("open");
+        this.classList.toggle("open");
+        console.log(this.classList);
+        if (this.classList.contains("open")) {
+            this.innerHTML = readLess;
+        } else {
+            this.innerHTML = readMore;
+            openMe.scrollIntoView();
+        }
+    });
 }
+
+
+
+// carousel header
+import Swiper from "swiper";
+var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        // depth: 50,
+        depth: 50,
+        modifier: 1,
+        slideShadows: false,
+    },
+    slidesPerView: 5,
+    // spaceBetween: 20,
+    spaceBetween: 10,
+    loop: true,
+    // clickable: true,
+});
+
+
+// restyle spotify
+const spotifyPlayer = document.querySelector(".all-reviews__sections__song");
+const spotifyBackground = spotifyPlayer.contentWindow.document.querySelector(
+    ".at"
+);
+spotifyBackground.style.backgroundColor = "#121212";
+
+
+
+
+// header animation
+// const allCovers = document.querySelector(".all-reviews__header__covers");
+// const albumCovers = document.querySelectorAll(
+//     ".all-reviews__header__covers__image"
+// );
+// let currentCover = 0;
+// let z = 1;
+
+// // move covers on load
+// allCovers.addEventListener("load", loadMove());
+
+// function loadMove() {
+//     albumCovers.forEach((cover) => {
+//         const x = 50 * Math.random() - 25;
+//         const r = 10 * Math.random() - 5;
+//         const y = 50 * Math.random() - 25;
+//         cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
+//     });
+// }
+
+// allCovers.addEventListener("mouseover", function () {
+//     albumCovers.forEach((cover) => {
+//         const x = 50 * Math.random() - 25;
+//         const r = 10 * Math.random() - 5;
+//         const y = 50 * Math.random() - 25;
+//         cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
+//     });
+// });
+
+// allCovers.addEventListener("mouseout", function () {
+//     albumCovers.forEach((cover) => {
+//         const x = 50 * Math.random() - 25;
+//         const r = 10 * Math.random() - 5;
+//         const y = 50 * Math.random() - 25;
+//         cover.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
+//     });
+// });
+
+// // move covers to top on click
+// allCovers.addEventListener("click", function () {
+//   currentCover = currentCover + 1;
+//   if (currentCover > albumCovers.length - 1) {
+//     currentCover = 0;
+//   }
+//   z = z + 1;
+//   albumCovers[currentCover].style.zIndex = z;
+// });
 
 // import SpotifyWebApi from "spotify-web-api-js";
 
