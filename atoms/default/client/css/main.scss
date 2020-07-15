@@ -12,6 +12,8 @@
 @import "fonts";
 @import "palette";
 
+@import "swipercss";
+
 // Uncomment for embeds
 //@import "embed";
 // Uncomment for full screen (including immersive article main media)
@@ -22,8 +24,16 @@
   margin: 0 !important;
 }
 
-$mq-breakpoints: (
-  mobile: 320px,
+html {
+  scroll-behavior: smooth;
+}
+
+.interactive-wrapper {
+  overflow: hidden;
+  // scroll-behavior: smooth;
+}
+
+$mq-breakpoints: (mobile: 320px,
   mobileMedium: 355px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -52,6 +62,7 @@ $textColor: #121212;
 }
 
 .#{$containerName} {
+
   // padding: 0 12px;
   @include mq(leftCol) {
     padding-top: 86px;
@@ -68,6 +79,7 @@ $textColor: #121212;
     @include mq(desktop) {
       padding: 0 20px;
     }
+
     @include mq(leftCol) {
       margin-top: -20px;
     }
@@ -80,31 +92,32 @@ $textColor: #121212;
 
   &__header {
     height: 480px;
+    height: 517px;
     width: 100vw;
     background-color: #fbf6ef;
     position: relative;
     padding-top: 20px;
 
     @include mq(phablet) {
-      height: 450px;
+      height: 480px;
     }
 
     @include mq(tablet) {
-      height: 420px;
+      height: 470px;
     }
 
     @include mq(desktop) {
-      height: 440px;
+      height: 480px;
     }
 
     @include mq(wide) {
-      height: 460px;
+      height: 490px;
     }
 
     &__covers {
       .swiper-container {
         width: 100vw;
-        height: 320px;
+        height: 350px;
         padding-top: 10px;
 
         .swiper-slide {
@@ -114,8 +127,60 @@ $textColor: #121212;
       }
 
       &__image {
-        box-shadow: 2px 3px 10px 0px rgba($color: #121212, $alpha: 0.2);
+        box-shadow: 2px 3px 10px 0px rgba($color: #121212, $alpha: 0.1);
         transition: transform 0.5s;
+      }
+
+      &__stars {
+        background-color: #ffe500;
+        padding: 4px 6px 1px 6px;
+        padding-bottom: 1px;
+        position: absolute;
+        margin-top: 8px;
+
+        @include mq(mobileLandscape) {
+          padding: 6px;
+          padding-bottom: 2px;
+        }
+
+        svg {
+          width: 16px;
+          height: auto;
+
+          @include mq(mobileLandscape) {
+            width: auto;
+          }
+        }
+
+        &__one {
+          svg:nth-child(-n + 1) {
+            fill: #121212;
+          }
+        }
+
+        &__two {
+          svg:nth-child(-n + 2) {
+            fill: #121212;
+          }
+        }
+
+        &__three {
+          svg:nth-child(-n + 3) {
+            fill: #121212;
+          }
+        }
+
+        &__four {
+          svg:nth-child(-n + 4) {
+            fill: #121212;
+          }
+        }
+
+        &__five {
+          svg:nth-child(-n + 5) {
+            fill: #121212;
+          }
+        }
       }
     }
 
@@ -376,6 +441,7 @@ $textColor: #121212;
         top: 0;
         margin-left: -10px;
       }
+
       &:nth-last-child(1) {
         &:before {
           content: "";
@@ -633,13 +699,11 @@ $textColor: #121212;
 
       animation: height 3s;
 
-      background-image: repeating-linear-gradient(
-        to bottom,
-        #dcdcdc,
-        #dcdcdc 0.0625rem,
-        transparent 0.0625rem,
-        transparent 0.25rem
-      );
+      background-image: repeating-linear-gradient(to bottom,
+          #dcdcdc,
+          #dcdcdc 0.0625rem,
+          transparent 0.0625rem,
+          transparent 0.25rem);
       background-repeat: repeat-x;
       background-position: top;
       background-size: 0.0625rem 0.8125rem;
@@ -680,6 +744,7 @@ $textColor: #121212;
     &__eleven-content {
       // height: 400px;
       max-height: 400px;
+      max-height: 468px;
       overflow: hidden;
 
       // transition: max-height 3s;

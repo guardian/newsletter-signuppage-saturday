@@ -1,22 +1,60 @@
-<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css"> -->
 
 <div class="interactive-wrapper">
     <div class="content-top">
         {{#header}}
         <div class="all-reviews__header">
-            
+
             <div class="all-reviews__header__covers">
-            
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {{#content}}
-                    <img class="all-reviews__header__covers__image swiper-slide" id="albumCovers" src="{{imageurl}}">
-                    {{/content}}
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {{#content}}
+                        <div class="swiper-slide">
+                            <a href="#{{classnumber}}">
+                                <img class="all-reviews__header__covers__image swiper-slide" id="albumCovers"
+                                    src="{{imageurl}}">
+                            </a>
+                            <span
+                                class="all-reviews__header__covers__stars all-reviews__header__covers__stars__{{stars}}">
+                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3679 13.6666L9.94087 13.3698L9.51317 13.6657L4.69037 17.0027L6.55072 11.5353L6.73303 10.9995L6.26783 10.6772L1.59776 7.4416H7.39465H7.9378L8.10723 6.92555L9.9288 1.37733L11.7734 6.92812L11.9441 7.4416H12.4852H18.266L13.6361 10.6791L13.1761 11.0008L13.355 11.5328L15.2031 17.0271L10.3679 13.6666Z"
+                                        stroke="black" stroke-width="1.5" />
+                                </svg>
+                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3679 13.6666L9.94087 13.3698L9.51317 13.6657L4.69037 17.0027L6.55072 11.5353L6.73303 10.9995L6.26783 10.6772L1.59776 7.4416H7.39465H7.9378L8.10723 6.92555L9.9288 1.37733L11.7734 6.92812L11.9441 7.4416H12.4852H18.266L13.6361 10.6791L13.1761 11.0008L13.355 11.5328L15.2031 17.0271L10.3679 13.6666Z"
+                                        stroke="black" stroke-width="1.5" />
+                                </svg>
+                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3679 13.6666L9.94087 13.3698L9.51317 13.6657L4.69037 17.0027L6.55072 11.5353L6.73303 10.9995L6.26783 10.6772L1.59776 7.4416H7.39465H7.9378L8.10723 6.92555L9.9288 1.37733L11.7734 6.92812L11.9441 7.4416H12.4852H18.266L13.6361 10.6791L13.1761 11.0008L13.355 11.5328L15.2031 17.0271L10.3679 13.6666Z"
+                                        stroke="black" stroke-width="1.5" />
+                                </svg>
+                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3679 13.6666L9.94087 13.3698L9.51317 13.6657L4.69037 17.0027L6.55072 11.5353L6.73303 10.9995L6.26783 10.6772L1.59776 7.4416H7.39465H7.9378L8.10723 6.92555L9.9288 1.37733L11.7734 6.92812L11.9441 7.4416H12.4852H18.266L13.6361 10.6791L13.1761 11.0008L13.355 11.5328L15.2031 17.0271L10.3679 13.6666Z"
+                                        stroke="black" stroke-width="1.5" />
+                                </svg>
+                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3679 13.6666L9.94087 13.3698L9.51317 13.6657L4.69037 17.0027L6.55072 11.5353L6.73303 10.9995L6.26783 10.6772L1.59776 7.4416H7.39465H7.9378L8.10723 6.92555L9.9288 1.37733L11.7734 6.92812L11.9441 7.4416H12.4852H18.266L13.6361 10.6791L13.1761 11.0008L13.355 11.5328L15.2031 17.0271L10.3679 13.6666Z"
+                                        stroke="black" stroke-width="1.5" />
+                                </svg>
+                            </span>
+                        </div>
+                        {{/content}}
+                    </div>
                 </div>
             </div>
-            </div>
-            
-            
+
+
             <div class="gs-container">
                 <div class="all-reviews__header__main content__main-column">
                     <div class="all-reviews__header__tag">{{{tag}}}</div>
@@ -115,7 +153,7 @@
                 {{#content}}
                 <div class="all-reviews__sections content__main-column">
 
-                    <div class="all-reviews__sections__{{classnumber}}">
+                    <div class="all-reviews__sections__{{classnumber}}" id="{{classnumber}}">
                         <div class="all-reviews__sections__{{classnumber}}-content panel-{{classnumber}}"
                             id="content-{{classnumber}}">
                             <div class="all-reviews__sections__top">
@@ -164,8 +202,9 @@
                                 </div>
                             </div>
                             <!-- <div >{{{spotifylink}}} -->
-                                <iframe Access-Control-Allow-Origin="*" class="all-reviews__sections__song" src="{{{spotifylink}}}" width="100%" height="80px" frameborder="0"
-                                    allowtransparency="true" allow="encrypted-media"></iframe>
+                            <iframe Access-Control-Allow-Origin="*" class="all-reviews__sections__song"
+                                src="{{{spotifylink}}}" width="100%" height="80px" frameborder="0"
+                                allowtransparency="true" allow="encrypted-media"></iframe>
                             <!-- </div> -->
                             <p class="all-reviews__sections__paragraph">{{{paragraph}}}</p>
                         </div>

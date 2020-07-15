@@ -33,6 +33,7 @@
     "preact": "^10.0.4",
     "require-uncached": "^2.0.0",
     "sass-mq": "^5.0.1",
+    "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.41.2",
     "webpack-stream": "^5.2.1"
@@ -52,6 +53,6 @@
     "request-promise": "^4.2.5",
     "spotify-web-api-js": "^1.4.0",
     "swiper": "^5.4.5",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "uglify-js": "^3.10.0"
   }
 }
