@@ -42,7 +42,7 @@ const initialiseSwiper = function () {
     cenSlides = false;
   }
 
-  var swiper = new Swiper(".swiper-container", {
+  var swiperOne = new Swiper(".swiper-container-one", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: cenSlides,
@@ -63,6 +63,47 @@ initialiseSwiper();
 window.addEventListener("resize", () => {
   console.log("re-sizer");
   initialiseSwiper();
+});
+
+//swiper
+var slidesPerView;
+
+const runSwiper = function () {
+  if (window.innerWidth >= 660) {
+    slidesPerView = 2;
+    console.log("desktop");
+  } else {
+    slidesPerView = 1;
+    console.log("mobile");
+  }
+
+  var swiperTwo = new Swiper(".swiper-container-two", {
+    effect: "slide",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 0,
+      modifier: 0,
+      slideShadows: false,
+    },
+    slidesPerView: slidesPerView,
+    spaceBetween: 20,
+    centeredSlides: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+};
+
+runSwiper();
+window.addEventListener("resize", () => {
+  console.log("re-sizer");
+  runSwiper();
 });
 
 // restyle spotify

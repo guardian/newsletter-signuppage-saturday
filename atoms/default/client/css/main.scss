@@ -788,3 +788,269 @@ $textColor: #121212;
 .hide-on-mobile {
   display: none !important;
 }
+
+
+
+.readmore-container {
+  background-color: #fbf6ef;
+  border-top: 1px solid #dcdcdc;
+  padding-bottom: 10px;
+  overflow: hidden;
+  margin-top: 120px;
+}
+
+
+.related-content {
+  padding: 0 0 0 38px;
+  margin-bottom: 100px;
+
+  &__headline {
+    font-family: "Guardian Headline Full",
+      "Guardian Egyptian Web",
+      Georgia,
+      serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 105%;
+    margin-top: 4px;
+    margin-bottom: 21px;
+    color: #121212;
+    width: 100vw;
+    margin-left: -10px;
+    padding-left: 10px;
+
+    @include mq(phablet) {
+      margin-left: -20px;
+      padding-left: 20px;
+    }
+
+    @include mq(leftCol) {
+      margin-left: -10px;
+      padding-left: 10px;
+    }
+  }
+
+  &__slide {
+
+    &__content {
+
+      &__wrapper {
+        // border-left: 8px solid $textHighlightColor;
+        // position: absolute;
+        padding-bottom: 6px;
+        // width: 90%;
+        margin-top: 0;
+      }
+
+      &__title {
+        font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+        font-size: 24px;
+        line-height: 125%;
+        font-weight: 400;
+        color: #121212;
+        padding-bottom: 5px;
+        text-decoration: none;
+        width: 90%;
+
+        span {
+          color: #a1845c;
+          font-weight: 700;
+        }
+
+        @include mq(mobileLandscape) {
+          width: 82%;
+        }
+
+        @include mq(desktop) {
+          width: 90%;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        svg {
+          width: 24px;
+          height: auto;
+          display: inline-block;
+          margin-bottom: -3px;
+          margin-left: 3px;
+        }
+      }
+
+      &__image {
+        width: 100%;
+        height: 190px;
+
+        @include mq(mobileMedium) {
+          height: 210px;
+        }
+
+        @include mq(mobileLandscape) {
+          height: 190px;
+        }
+      }
+
+
+
+
+
+
+
+
+      &__image1 {
+        background-image: url("https://media.guim.co.uk/bfa7907c0dc7b226b9d20612a593c346a09a9283/0_0_2560_1536/500.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &__image2 {
+        background-image: url("https://media.guim.co.uk/b16237cee148c7e957b04e2fef1884689d401252/0_0_5000_3000/500.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &__image3 {
+        background-image: url("https://media.guim.co.uk/f10804864cf249272732064544177ae3314e3ba8/0_0_5000_3000/1000.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &__image4 {
+        background-image: url("https://media.guim.co.uk/e6fef82c417981957cd79d43de3130e72bb72a80/80_0_1746_1417/1000.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &__image5 {
+        background-image: url("https://media.guim.co.uk/37717bb8722244ae5fa4013fead4324f96b2f7ce/0_0_4000_2400/1000.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.swiper-container-two {
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  // background-color: #dcdcdc;
+  border: 1px solid black;
+  margin-right: 8px;
+  margin-bottom: -8px;
+
+  &:nth-last-child(1) {
+    margin-right: 0;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #121212;
+}
+
+.swiper-button-next {
+  right: 10px;
+  position: absolute;
+  bottom: -43px;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.swiper-button-prev {
+  right: 60px;
+  position: absolute;
+  bottom: -43px;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+  content: "";
+  background-image: url("https://uploads.guim.co.uk/2020/02/27/left-arrow-hf.svg");
+  width: 40px;
+  height: 30px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 8px;
+}
+
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "";
+  background-image: url("https://uploads.guim.co.uk/2020/02/27/right-arrow-hf.svg");
+  width: 40px;
+  height: 30px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 8px;
+}
+
+
+
+.content-container-wrapper {
+  overflow: hidden;
+  margin-top: 0;
+
+  @include mq(phablet) {
+    margin-top: -20px;
+  }
+
+  @include mq(desktop) {
+    margin-top: -20px;
+  }
+
+
+  &:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 240px;
+    top: 13px;
+    display: none;
+
+    @include mq(leftCol) {
+      display: block;
+      left: 160px;
+    }
+
+    @include mq(wide) {
+      left: 240px;
+    }
+
+  }
+}
+
+
+
+
+
+.readmore-container {
+
+  .android &,
+  .ios & {
+    display: none;
+  }
+}
