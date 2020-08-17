@@ -1054,3 +1054,21 @@ $textColor: #121212;
     display: none;
   }
 }
+
+.interactive-ad-banner {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+
+  @include mq($from: tablet) {
+    .ad-slot--rendered {
+      margin: 20px 0 40px 0;
+    }
+  }
+}
+
+
+.hide-until-tablet,
+.mobile-only {
+  margin-top: 30px;
+}
