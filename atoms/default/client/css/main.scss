@@ -7,3 +7,99 @@
     margin: 0;
     padding: 0;
 }
+
+
+.content-wrapper {
+    padding: 0 10px;
+
+    h1 {
+        margin-bottom: 20px;
+        line-height: 115%;
+    }
+
+    img {
+        width: calc(100vw - 20px);
+
+    }
+
+    .header {
+        overflow: hidden;
+        margin: -10px -10px 20px -10px;
+
+        img {}
+
+        h1 {
+            margin-left: 10px;
+            // background-color: white;
+            width: 70%;
+            margin-bottom: 70px;
+            margin-top: 20px;
+        }
+    }
+
+    .header-pic {
+        width: 100vw;
+    }
+
+    p {
+        // background-color: white;
+        z-index: 200;
+        position: relative;
+        margin-top: 12px;
+        margin-bottom: 0;
+        padding-top: 4px;
+        padding-bottom: 20px;
+    }
+
+    .quote {
+        font-family: Guardian Headline;
+        line-height: 115%;
+
+    }
+
+    .content-one {
+        .stick {
+            position: sticky;
+            top: 10px;
+        }
+
+        .bio {
+            background-color: rgba(255, 255, 255, 0.85);
+            z-index: 200;
+            position: relative;
+
+            font-family: "Guardian Egyptian Web",
+                Georgia,
+                serif;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 0;
+            margin-top: 0;
+
+            &::before {
+                content: '';
+                background-color: red;
+                width: 50%;
+                height: 4px;
+                position: absolute;
+                margin-top: -4px;
+            }
+        }
+
+        .debt {
+
+
+            p {
+                margin: 0;
+                padding: 0;
+                padding-bottom: 4px;
+                font-size: 20px;
+                line-height: 115%;
+            }
+
+        }
+    }
+}
