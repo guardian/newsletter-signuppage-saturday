@@ -63,6 +63,22 @@ $textColor: #121212;
 
 .#{$containerName} {
 
+  .show-advert {
+    display: none;
+
+    &:nth-child(5n) {
+      display: flex;
+      justify-content: center;
+      background-color: white;
+
+      @include mq($from: tablet) {
+        .ad-slot--rendered {
+          margin: 20px 0 40px 0;
+        }
+      }
+    }
+  }
+
   // padding: 0 12px;
   @include mq(leftCol) {
     padding-top: 86px;
@@ -93,6 +109,7 @@ $textColor: #121212;
   &__header {
     height: 480px;
     height: 517px;
+    height: 570px;
     width: 100vw;
     background-color: #fbf6ef;
     position: relative;
@@ -104,25 +121,32 @@ $textColor: #121212;
 
     @include mq(tablet) {
       height: 470px;
+      height: 520px;
     }
 
     @include mq(desktop) {
-      height: 480px;
+      height: 540px;
     }
 
     @include mq(wide) {
-      height: 490px;
+      height: 550px;
     }
 
     &__covers {
       .swiper-container {
         width: 100vw;
-        height: 350px;
+        height: 380px;
+        height: 410px;
         padding-top: 10px;
 
         .swiper-slide {
           width: 300px !important;
           height: 300px;
+          margin-left: 1px;
+
+          @include mq(mobileLandscape) {
+            margin-left: 0;
+          }
         }
       }
 
@@ -137,6 +161,7 @@ $textColor: #121212;
         padding-bottom: 1px;
         position: absolute;
         margin-top: 8px;
+        margin-top: -33px;
 
         @include mq(mobileLandscape) {
           padding: 6px;
@@ -179,6 +204,49 @@ $textColor: #121212;
         &__five {
           svg:nth-child(-n + 5) {
             fill: #121212;
+          }
+        }
+      }
+
+      &__meta {
+        display: flex;
+        justify-content: space-between;
+        background-color: #FBF6EF;
+
+        .left {
+          width: 80%;
+          margin-top: 4px;
+          padding-left: 4px;
+        }
+
+        .artist-name {
+          font-weight: bold;
+          margin-bottom: 0;
+          line-height: 125%;
+        }
+
+        .album-name {
+          margin-bottom: 0;
+          margin-top: -2px;
+          line-height: 125%;
+        }
+
+        .arrow {
+          margin-top: 8px;
+
+          &:hover {
+            cursor: pointer;
+
+            svg {
+              circle {
+                fill: #EACCA0;
+              }
+            }
+          }
+
+          svg {
+            width: 38px;
+            height: 38px;
           }
         }
       }
@@ -429,8 +497,15 @@ $textColor: #121212;
   &__sections {
     margin-top: 20px;
 
+    .element-video,
+    .element-audio {
+      display: none;
+    }
+
+
     @include mq(leftCol) {
       padding-left: 17px;
+      padding-left: 20px;
 
       &:before {
         content: "";
@@ -801,8 +876,13 @@ $textColor: #121212;
 
 
 .related-content {
-  padding: 0 0 0 38px;
+
+  padding: 0 0 0 10px;
   margin-bottom: 100px;
+
+  @include mq(desktop) {
+    padding: 0 0 0 38px;
+  }
 
   &__headline {
     font-family: "Guardian Headline Full",
@@ -853,7 +933,7 @@ $textColor: #121212;
         width: 90%;
 
         span {
-          color: #a1845c;
+          color: #121212;
           font-weight: 700;
         }
 
@@ -899,14 +979,14 @@ $textColor: #121212;
 
 
       &__image1 {
-        background-image: url("https://media.guim.co.uk/bfa7907c0dc7b226b9d20612a593c346a09a9283/0_0_2560_1536/500.jpg");
+        background-image: url("https://media.guim.co.uk/c882730422ce7a33b6e788eb73774e5bce13d988/0_0_5000_3000/500.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
 
       &__image2 {
-        background-image: url("https://media.guim.co.uk/b16237cee148c7e957b04e2fef1884689d401252/0_0_5000_3000/500.jpg");
+        background-image: url("https://media.guim.co.uk/49bff4f1e4ed31041d8509b2d9481edf68ca5104/0_0_1352_812/500.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
