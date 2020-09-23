@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left 0px bottom 0px;
-    height: 32vw;
+    height: 56vw;
     margin-top: 0px;
     @include mq(tablet) {
       border-top: 0;
@@ -21,6 +21,7 @@
 
     @include mq(desktop) {
       width: 940px;
+      height: 440px;
     }
     @include mq(leftCol) {
       width: 950px;
@@ -35,7 +36,7 @@
     background-color: $neutral-86;
     position: absolute;
     height: 1px;
-    top: calc(32vw);
+    top: calc(56vw);
     left: -10px;
 
     @include mq(mobileLandscape) {
@@ -44,10 +45,10 @@
     }
 
     @include mq(tablet) {
-      top: 300px;
     }
     @include mq(desktop) {
       width: 980px;
+      top: 440px;
     }
     @include mq(leftCol) {
       left: -10px;
@@ -216,7 +217,7 @@ a,
     }
   }
   .headline:after {
-    top: calc(32vw + 10px);
+    top: calc(56vw + 10px);
     width: calc(100% + 10px);
   }
   .standfirst {
@@ -237,5 +238,11 @@ a,
     font-weight: 700;
     margin-top: 36px;
     margin-bottom: 6px;
+  }
+}
+
+.android {
+  .headline:after {
+    display: none;
   }
 }
