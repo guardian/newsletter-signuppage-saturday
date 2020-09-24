@@ -1,0 +1,34 @@
+@import "fonts";
+@import "mq";
+@import "palette";
+// @import "enhancer";
+
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+@import "one-mil";
+
+.one-million-top-margin {
+    svg {
+        top: -40px;
+
+        @include mq(tablet) {
+            top: -40px;
+        }
+    }
+
+
+}
+
+.us-svg {
+    svg {
+        width: 53% !important;
+
+        @include mq(tablet) {
+            width: 50% !important;
+        }
+    }
+}
