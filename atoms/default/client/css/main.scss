@@ -33,7 +33,8 @@ html {
   // scroll-behavior: smooth;
 }
 
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileMedium: 355px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -62,7 +63,6 @@ $textColor: #121212;
 }
 
 .#{$containerName} {
-
   .show-advert {
     display: none;
 
@@ -136,7 +136,8 @@ $textColor: #121212;
       .swiper-container {
         width: 100vw;
         height: 380px;
-        height: 410px;
+        margin-top: 20px;
+        // height: 410px;
         padding-top: 10px;
 
         .swiper-slide {
@@ -161,9 +162,9 @@ $textColor: #121212;
         padding-bottom: 1px;
         position: absolute;
         margin-top: 8px;
-        margin-top: -33px;
-
+        margin-top: -29px;
         @include mq(mobileLandscape) {
+          margin-top: -33px;
           padding: 6px;
           padding-bottom: 2px;
         }
@@ -177,31 +178,31 @@ $textColor: #121212;
           }
         }
 
-        &__one {
+        &__1 {
           svg:nth-child(-n + 1) {
             fill: #121212;
           }
         }
 
-        &__two {
+        &__2 {
           svg:nth-child(-n + 2) {
             fill: #121212;
           }
         }
 
-        &__three {
+        &__3 {
           svg:nth-child(-n + 3) {
             fill: #121212;
           }
         }
 
-        &__four {
+        &__4 {
           svg:nth-child(-n + 4) {
             fill: #121212;
           }
         }
 
-        &__five {
+        &__5 {
           svg:nth-child(-n + 5) {
             fill: #121212;
           }
@@ -211,7 +212,7 @@ $textColor: #121212;
       &__meta {
         display: flex;
         justify-content: space-between;
-        background-color: #FBF6EF;
+        background-color: #fbf6ef;
 
         .left {
           width: 80%;
@@ -239,7 +240,7 @@ $textColor: #121212;
 
             svg {
               circle {
-                fill: #EACCA0;
+                fill: #eacca0;
               }
             }
           }
@@ -303,7 +304,7 @@ $textColor: #121212;
         font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
           serif;
         font-size: 38px;
-        width: 85%;
+        width: 90%;
         line-height: 105%;
         // margin-bottom: 10px;
         position: absolute;
@@ -314,6 +315,7 @@ $textColor: #121212;
         padding: 0 0px 40px 10px;
 
         @include mq(phablet) {
+          width: 85%;
           bottom: -165px;
         }
 
@@ -498,10 +500,11 @@ $textColor: #121212;
     margin-top: 20px;
 
     .element-video,
-    .element-audio {
+    .element-audio,
+    .element-image,
+    aside {
       display: none;
     }
-
 
     @include mq(leftCol) {
       padding-left: 17px;
@@ -655,31 +658,31 @@ $textColor: #121212;
         }
       }
 
-      &__one {
+      &__1 {
         svg:nth-child(-n + 1) {
           fill: #121212;
         }
       }
 
-      &__two {
+      &__2 {
         svg:nth-child(-n + 2) {
           fill: #121212;
         }
       }
 
-      &__three {
+      &__3 {
         svg:nth-child(-n + 3) {
           fill: #121212;
         }
       }
 
-      &__four {
+      &__4 {
         svg:nth-child(-n + 4) {
           fill: #121212;
         }
       }
 
-      &__five {
+      &__5 {
         svg:nth-child(-n + 5) {
           fill: #121212;
         }
@@ -754,17 +757,34 @@ $textColor: #121212;
       line-height: 135%;
     }
 
-    &__one,
-    &__two,
-    &__three,
-    &__four,
-    &__five,
-    &__six,
-    &__seven,
-    &__eight,
-    &__nine,
-    &__ten,
-    &__eleven {
+    &__1,
+    &__2,
+    &__3,
+    &__4,
+    &__5,
+    &__6,
+    &__7,
+    &__8,
+    &__9,
+    &__10,
+    &__11,
+    &__12,
+    &__13,
+    &__14,
+    &__15,
+    &__16,
+    &__17,
+    &__18,
+    &__19,
+    &__20,
+    &__21,
+    &__22,
+    &__23,
+    &__24,
+    &__25,
+    &__26,
+    &__27,
+    &__28 {
       display: flex;
       flex-direction: column;
       border-bottom: 1px solid $thirdColor;
@@ -774,11 +794,13 @@ $textColor: #121212;
 
       animation: height 3s;
 
-      background-image: repeating-linear-gradient(to bottom,
-          #dcdcdc,
-          #dcdcdc 0.0625rem,
-          transparent 0.0625rem,
-          transparent 0.25rem);
+      background-image: repeating-linear-gradient(
+        to bottom,
+        #dcdcdc,
+        #dcdcdc 0.0625rem,
+        transparent 0.0625rem,
+        transparent 0.25rem
+      );
       background-repeat: repeat-x;
       background-position: top;
       background-size: 0.0625rem 0.8125rem;
@@ -788,44 +810,58 @@ $textColor: #121212;
       margin-top: 70px;
     }
 
-    &__one {
+    &__1 {
       margin-top: 12px;
     }
 
-    &__three {
+    &__3 {
       .player {
         margin-bottom: 12px;
       }
     }
 
-    &__four {
+    &__4 {
       margin-bottom: 60px;
     }
 
-    &__eleven {
+    &__11 {
       margin-bottom: 50px;
     }
 
-    &__one-content,
-    &__two-content,
-    &__three-content,
-    &__four-content,
-    &__five-content,
-    &__six-content,
-    &__seven-content,
-    &__eight-content,
-    &__nine-content,
-    &__ten-content,
-    &__eleven-content {
+    &__1-content,
+    &__2-content,
+    &__3-content,
+    &__4-content,
+    &__5-content,
+    &__6-content,
+    &__7-content,
+    &__8-content,
+    &__9-content,
+    &__10-content,
+    &__11-content,
+    &__12-content,
+    &__13-content,
+    &__14-content,
+    &__15-content,
+    &__16-content,
+    &__17-content,
+    &__18-content,
+    &__19-content,
+    &__20-content,
+    &__21-content,
+    &__22-content,
+    &__23-content,
+    &__24-content {
       // height: 400px;
       max-height: 400px;
-      max-height: 468px;
+      max-height: 560px;
       overflow: hidden;
 
       // transition: max-height 3s;
 
       @include mq(desktop) {
         height: 390px;
+        height: 470px;
         // padding-right: 10px;
       }
 
@@ -856,6 +892,29 @@ $textColor: #121212;
         padding-right: 8px;
         padding-left: 18px;
       }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    &__byline {
+      margin-top: 20px;
+      p {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 4px;
+      }
+      span {
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+          Arial, "Lucida Grande", sans-serif;
+        color: #767676;
+      }
     }
   }
 }
@@ -863,8 +922,6 @@ $textColor: #121212;
 .hide-on-mobile {
   display: none !important;
 }
-
-
 
 .readmore-container {
   background-color: #fbf6ef;
@@ -874,9 +931,7 @@ $textColor: #121212;
   margin-top: 120px;
 }
 
-
 .related-content {
-
   padding: 0 0 0 10px;
   margin-bottom: 100px;
 
@@ -885,9 +940,7 @@ $textColor: #121212;
   }
 
   &__headline {
-    font-family: "Guardian Headline Full",
-      "Guardian Egyptian Web",
-      Georgia,
+    font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
       serif;
     font-weight: 700;
     font-size: 24px;
@@ -911,9 +964,7 @@ $textColor: #121212;
   }
 
   &__slide {
-
     &__content {
-
       &__wrapper {
         // border-left: 8px solid $textHighlightColor;
         // position: absolute;
@@ -923,7 +974,8 @@ $textColor: #121212;
       }
 
       &__title {
-        font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+        font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia,
+          serif;
         font-size: 24px;
         line-height: 125%;
         font-weight: 400;
@@ -970,13 +1022,6 @@ $textColor: #121212;
           height: 190px;
         }
       }
-
-
-
-
-
-
-
 
       &__image1 {
         background-image: url("https://media.guim.co.uk/c882730422ce7a33b6e788eb73774e5bce13d988/0_0_5000_3000/500.jpg");
@@ -1059,7 +1104,6 @@ $textColor: #121212;
   }
 }
 
-
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-next:after {
   content: "";
@@ -1086,8 +1130,6 @@ $textColor: #121212;
   margin-right: 8px;
 }
 
-
-
 .content-container-wrapper {
   overflow: hidden;
   margin-top: 0;
@@ -1100,9 +1142,8 @@ $textColor: #121212;
     margin-top: -20px;
   }
 
-
   &:before {
-    content: '';
+    content: "";
     width: 1px;
     height: 100%;
     background-color: black;
@@ -1119,16 +1160,10 @@ $textColor: #121212;
     @include mq(wide) {
       left: 240px;
     }
-
   }
 }
 
-
-
-
-
 .readmore-container {
-
   .android &,
   .ios & {
     display: none;
@@ -1147,8 +1182,25 @@ $textColor: #121212;
   }
 }
 
-
 .hide-until-tablet,
 .mobile-only {
   margin-top: 30px;
+}
+
+.all-reviews {
+  .android &,
+  .ios & {
+    .all-reviews__wrapper {
+      .meta {
+        display: none;
+      }
+    }
+
+    &__sections__albumname {
+      margin-top: 0;
+    }
+    .all-reviews__header__main {
+      position: relative;
+    }
+  }
 }
