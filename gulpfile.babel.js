@@ -11,7 +11,8 @@ const sass = require("gulp-sass");
 const file = require("gulp-file");
 sass.compiler = require("node-sass");
 const browserSync = require("browser-sync");
-3
+const AWS = require('aws-sdk');
+
 const browser = browserSync.create();
 const cleanCSS = require('gulp-clean-css');
 const es = require('event-stream');
@@ -55,7 +56,7 @@ const clean = () => {
     return del([".build"]);
 }
 
-const render = async(cb) => {
+const render = async (cb) => {
     try {
         const atoms = (fs.readdirSync("atoms")).filter(n => n.slice(0, 1) !== ".");
         const renders = atoms.map(atom => {
@@ -84,23 +85,23 @@ const buildJS = () => {
             mode: isDeploy ? 'production' : 'development',
             module: {
                 rules: [{
-                        test: /\.css$/,
-                        loader: 'style!css'
-                    },
-                    {
-                        test: /\.js$/,
-                        exclude: /node_modules/,
-                        use: 'babel-loader'
-                    },
-                    {
-                        test: /\.jsx$/,
-                        exclude: /node_modules/,
-                        use: 'babel-loader'
-                    },
-                    {
-                        test: /\.html$/,
-                        use: 'raw-loader'
-                    }
+                    test: /\.css$/,
+                    loader: 'style!css'
+                },
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: 'babel-loader'
+                },
+                {
+                    test: /\.jsx$/,
+                    exclude: /node_modules/,
+                    use: 'babel-loader'
+                },
+                {
+                    test: /\.html$/,
+                    use: 'raw-loader'
+                }
                 ]
             },
             devtool: 'source-map',
@@ -194,8 +195,13 @@ const serve = () => {
     watch(["atoms/**/*.scss", "shared/**/*.scss"], series(buildCSS, local))
 }
 
+const awsCredentials = new AWS.CredentialProviderChain([
+    function () { return new AWS.EnvironmentCredentials('AWS') },
+    function () { return new AWS.SharedIniFileCredentials({ profile: 'interactives' }) }
+]);
+
 const s3Upload = (cacheControl, keyPrefix) => {
-    return s3()({
+    return s3({ credentialProvider: awsCredentials })({
         'Bucket': 'gdn-cdn',
         'ACL': 'public-read',
         'CacheControl': cacheControl,
@@ -228,7 +234,7 @@ const upload = () => {
 
     uploadTasks.push(
         src(`.build/assets/**/*`)
-        .pipe(s3Upload('max-age=31536000', `${s3Path}/assets/${version}`))
+            .pipe(s3Upload('max-age=31536000', `${s3Path}/assets/${version}`))
     );
 
     return mergeStream(uploadTasks)
@@ -247,7 +253,7 @@ const url = (cb) => {
     cb();
 }
 
-const getLogs = async(cb) => {
+const getLogs = async (cb) => {
     const atoms = getAtoms();
 
     for (let i = 0; i < atoms.length; i++) {
