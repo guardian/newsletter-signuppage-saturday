@@ -23,6 +23,7 @@ for (var i = 0; i < openButtons.length; i++) {
     }
 
     openMe.classList.toggle("open");
+    openMe.scrollIntoView();
     this.classList.toggle("open");
     console.log(this.classList);
 
@@ -151,15 +152,23 @@ dateElAll.forEach((dateEl) => {
 
 
 // lazy load spotify
+const spotifyFrame = document.querySelectorAll(".all-reviews__sections__song")
 
 
+document.addEventListener("scroll", function () {
+  for (i = 0; i < spotifyFrame.length; i++) {
+    const offset = spotifyFrame[i].getBoundingClientRect().top
+    const windowHeight = window.innerHeight
+    console.log(offset, (windowHeight + 50))
+    if (offset <= (windowHeight + 50)) {
+      spotifyFrame[i].setAttribute("src", spotifyFrame[i].dataset.src)
+    }
+  }
+})
 
-// document.addEventListener("scroll", function () {
-//   const spotifyFrame = document.querySelectorAll(".spotify-iframe")
-//   console.log(spotifyFrame)
-//   const offset = spotifyFrame.getBoundingClientRect().top - (window.innerHeight * 2)
-//   console.log(offset)
-//   if (offset < 0) {
+// document.addEventListener("scroll", function () {  
+
+//   if (offset > 0) {
 //     spotifyFrame.forEach(() => {
 //       spotifyFrame.setAttribute("src", iframe.dataset.src)
 //     })

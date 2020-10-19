@@ -33,8 +33,7 @@ html {
   // scroll-behavior: smooth;
 }
 
-$mq-breakpoints: (
-  mobile: 320px,
+$mq-breakpoints: (mobile: 320px,
   mobileMedium: 355px,
   mobileLandscape: 480px,
   phablet: 660px,
@@ -63,21 +62,21 @@ $textColor: #121212;
 }
 
 .#{$containerName} {
-  .show-advert {
-    display: none;
+  // .show-advert {
+  //   display: none;
 
-    &:nth-child(5n) {
-      display: flex;
-      justify-content: center;
-      background-color: white;
+  //   &:nth-child(5n) {
+  //     display: flex;
+  //     justify-content: center;
+  //     background-color: white;
 
-      @include mq($from: tablet) {
-        .ad-slot--rendered {
-          margin: 20px 0 40px 0;
-        }
-      }
-    }
-  }
+  //     @include mq($from: tablet) {
+  //       .ad-slot--rendered {
+  //         margin: 20px 0 40px 0;
+  //       }
+  //     }
+  //   }
+  // }
 
   // padding: 0 12px;
   @include mq(leftCol) {
@@ -87,17 +86,24 @@ $textColor: #121212;
   &__wrapper {
     padding: 0 12px;
     margin-top: 80px;
+    margin-top: 170px;
+
+    @include mq(mobileMedium) {
+      margin-top: 140px;
+    }
 
     @include mq(tablet) {
       padding: 0 10px;
+      margin-top: 90px;
     }
 
     @include mq(desktop) {
       padding: 0 20px;
+      margin-top: 130px;
     }
 
     @include mq(leftCol) {
-      margin-top: -20px;
+      margin-top: 40px;
     }
   }
 
@@ -133,12 +139,19 @@ $textColor: #121212;
     }
 
     &__covers {
+      margin-bottom: 65px;
+
       .swiper-container {
         width: 100vw;
         height: 380px;
         margin-top: 20px;
         // height: 410px;
         padding-top: 10px;
+
+        @include mq(desktop) {
+          height: 350px;
+          margin-bottom: 31px;
+        }
 
         .swiper-slide {
           width: 300px !important;
@@ -163,6 +176,7 @@ $textColor: #121212;
         position: absolute;
         margin-top: 8px;
         margin-top: -29px;
+
         @include mq(mobileLandscape) {
           margin-top: -33px;
           padding: 6px;
@@ -259,19 +273,19 @@ $textColor: #121212;
       font-family: "Guardian Egyptian Web", Georgia, serif;
       font-weight: 900;
       // color: #a1845c !important;
-      position: absolute;
-      bottom: -30px;
+      // position: absolute;
+      // bottom: -30px;
       margin-left: 10px;
       color: #121212 !important;
 
       @include mq(phablet) {
         margin-left: 0;
-        bottom: -40px;
+        // bottom: -40px;
       }
 
       @include mq(tablet) {
         margin-left: 0px;
-        bottom: -30px;
+        // bottom: -30px;
       }
 
       @include mq(desktop) {
@@ -279,24 +293,33 @@ $textColor: #121212;
       }
 
       @include mq(leftCol) {
-        position: absolute;
-        bottom: -42px;
-        margin-left: 10px;
+        margin-left: 0px;
       }
     }
 
     &__main {
+      @include mq(phablet) {
+        margin-top: -53px;
+      }
+
+      @include mq(desktop) {
+        margin-top: -24px;
+        padding-left: 24px;
+      }
+
       @include mq(leftCol) {
         padding-left: 17px;
+        padding-left: 41px;
 
         &:before {
           content: "";
           width: 1px;
-          height: 200%;
+          // height: 200%;
           background-color: $thirdColor;
           position: absolute;
-          top: 0;
-          margin-left: -10px;
+          bottom: -50px;
+          top: 4px;
+          margin-left: -11px;
         }
       }
 
@@ -307,27 +330,35 @@ $textColor: #121212;
         width: 90%;
         line-height: 105%;
         // margin-bottom: 10px;
-        position: absolute;
-        bottom: -200px;
+        // position: absolute;
+        // bottom: -200px;
         background-color: #121212;
-        margin-left: 0;
+        padding-left: 0;
         color: white;
         padding: 0 0px 40px 10px;
 
         @include mq(phablet) {
           width: 85%;
-          bottom: -165px;
+          // bottom: -165px;
         }
 
         @include mq(tablet) {
-          bottom: -155px;
+          // bottom: -155px;
         }
 
         @include mq(desktop) {
           width: 620px;
           font-size: 40px;
-          bottom: -174px;
-          margin-left: 10px;
+          // bottom: -174px;
+          padding-left: 10px;
+
+          width: 620px;
+          font-size: 50px;
+          // bottom: -197px;
+        }
+
+        @include mq(leftCol) {
+          margin-left: -10px;
         }
       }
 
@@ -338,6 +369,24 @@ $textColor: #121212;
         line-height: 115%;
         font-weight: 500;
         margin-bottom: 50px;
+
+        margin-left: 10px;
+        margin-top: 5px;
+        font-size: 17px;
+        font-weight: 300;
+        width: 80%;
+
+        @include mq(phablet) {
+          margin-left: 0;
+        }
+
+        @include mq(desktop) {
+          margin-left: 10px;
+        }
+
+        @include mq(leftCol) {
+          margin-left: 0px;
+        }
       }
 
       &__intro-para {
@@ -406,6 +455,7 @@ $textColor: #121212;
       @include mq(leftCol) {
         width: 8.75rem;
         top: 85px;
+        top: 124px;
       }
 
       @include mq(wide) {
@@ -498,6 +548,10 @@ $textColor: #121212;
 
   &__sections {
     margin-top: 20px;
+
+    @include mq(desktop) {
+      padding-left: 10px;
+    }
 
     .element-video,
     .element-audio,
@@ -794,13 +848,11 @@ $textColor: #121212;
 
       animation: height 3s;
 
-      background-image: repeating-linear-gradient(
-        to bottom,
-        #dcdcdc,
-        #dcdcdc 0.0625rem,
-        transparent 0.0625rem,
-        transparent 0.25rem
-      );
+      background-image: repeating-linear-gradient(to bottom,
+          #dcdcdc,
+          #dcdcdc 0.0625rem,
+          transparent 0.0625rem,
+          transparent 0.25rem);
       background-repeat: repeat-x;
       background-position: top;
       background-size: 0.0625rem 0.8125rem;
@@ -851,7 +903,11 @@ $textColor: #121212;
     &__21-content,
     &__22-content,
     &__23-content,
-    &__24-content {
+    &__24-content,
+    &__25-content,
+    &__26-content,
+    &__27-content,
+    &__28-content {
       // height: 400px;
       max-height: 400px;
       max-height: 560px;
@@ -901,12 +957,14 @@ $textColor: #121212;
 
     &__byline {
       margin-top: 20px;
+
       p {
         font-size: 17px;
         font-weight: 700;
         line-height: 1.1;
         margin-bottom: 4px;
       }
+
       span {
         font-weight: 500;
         font-size: 0.75rem;
@@ -1038,25 +1096,25 @@ $textColor: #121212;
       }
 
       &__image3 {
-        background-image: url("https://media.guim.co.uk/f10804864cf249272732064544177ae3314e3ba8/0_0_5000_3000/1000.jpg");
+        background-image: url("https://media.guim.co.uk/b55f8932976e7658c98531d8d00c4417f208ee74/0_740_11608_6966/500.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
 
       &__image4 {
-        background-image: url("https://media.guim.co.uk/e6fef82c417981957cd79d43de3130e72bb72a80/80_0_1746_1417/1000.jpg");
+        background-image: url("https://media.guim.co.uk/0d2ca8a51e00aca31ded81da841fed404c2d437d/0_0_5000_3000/500.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
 
-      &__image5 {
-        background-image: url("https://media.guim.co.uk/37717bb8722244ae5fa4013fead4324f96b2f7ce/0_0_4000_2400/1000.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
+      // &__image5 {
+      //   background-image: url("https://media.guim.co.uk/37717bb8722244ae5fa4013fead4324f96b2f7ce/0_0_4000_2400/1000.jpg");
+      //   background-size: cover;
+      //   background-position: center;
+      //   background-repeat: no-repeat;
+      // }
     }
   }
 }
@@ -1164,6 +1222,7 @@ $textColor: #121212;
 }
 
 .readmore-container {
+
   .android &,
   .ios & {
     display: none;
@@ -1188,6 +1247,7 @@ $textColor: #121212;
 }
 
 .all-reviews {
+
   .android &,
   .ios & {
     .all-reviews__wrapper {
@@ -1199,8 +1259,29 @@ $textColor: #121212;
     &__sections__albumname {
       margin-top: 0;
     }
+
     .all-reviews__header__main {
       position: relative;
     }
   }
+}
+
+.ios,
+.android {
+  // .all-reviews__header__main {
+  //   margin-top: 53vw !important;
+  // }
+
+  .all-reviews__header__tag {
+    display: none;
+  }
+
+  .all-reviews__sections__byline span {
+    font-size: 15px;
+  }
+}
+
+
+.is-immersive-interactive .l-footer {
+  display: block;
 }
