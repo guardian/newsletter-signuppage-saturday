@@ -196,7 +196,6 @@ function initCaptions() {
 
 function init(){
   initVideo();
-  viewPortHeight();
   initDots();
   initSlider();
   initTimeline();

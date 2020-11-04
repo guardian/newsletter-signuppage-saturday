@@ -106,6 +106,7 @@
     .timeline-placeholder {
       display: flex;
       justify-content: space-between;
+      position: relative;
 
       &:after {
         display: block;
@@ -210,13 +211,9 @@
 .election-image-carousel {
   overflow: hidden;
   height: 700px; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100 - 48px);
-  width: 100vw;
+  height: 400px;
+  width: 100%;
   background-color: #333;
-
-  @include mq($from: desktop) {
-    height: calc(100vh - 48px);
-  }
 
   .animated-panel-one {
     width: 100%;
@@ -262,14 +259,14 @@
       padding-bottom: 12px;
       padding-right: 6px;
       overflow: hidden;
-      height: 18px;
+      height: 14px;
 
       &.display {
         height: auto;
       }
 
       @include mq($from: desktop) {
-        max-width: 300px;
+        max-width: 100%;
         height: auto;
       }
 
@@ -277,14 +274,26 @@
         color: #fff;
         font-size: 14px;
         line-height: 1.2;
+        font-family: $f-sans-serif-text;
 
         strong {
-          font-family: "Guardian Headline Full";
+          font-family: $f-sans-serif-text;
+          font-weight: 900;
           display: block;
-          font-size: 18px;
+          font-size: 14px;
           line-height: 1.2;
           margin-bottom: 10px;
           display: block;
+
+          svg {
+            width: 15px;
+            height: auto;
+            margin-left: 6px;
+
+            path {
+              fill: #fff;
+            }
+          }
 
           @include mq($from: desktop) {
             display: none;
@@ -386,35 +395,10 @@
   .slide {
     width: 100%;
     height: 700px; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100 - 48px);
+    height: 400px;
     position: absolute;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-
-    @include mq($from: desktop) {
-      height: calc(100vh - 48px);
-    }
-
-    &:nth-child(1) {
-      .headline-container {
-        bottom: 0px;
-        left: 0px;
-        padding-left: 10px;
-        padding-bottom: 0px;
-        padding-top: 6px;
-        background-color: rgba(0,0,0,0.5);
-        transform: translate(0,0);
-
-        @include mq($from: desktop) {
-          padding: 0;
-          background-color: unset;
-          left: 50%;
-          top: 55%;
-          bottom: auto;
-          transform: translate(-50%, -50%);
-        }
-      }
-    }
 
     .date {
       position: absolute;
@@ -465,7 +449,7 @@
       left: 0;
       right: 0;
       position: absolute;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0);
       z-index: 1;
     }
 
