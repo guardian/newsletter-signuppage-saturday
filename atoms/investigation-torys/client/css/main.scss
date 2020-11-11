@@ -1,0 +1,553 @@
+@import "fonts";
+@import "mq";
+@import "palette";
+// @import "enhancer";
+
+.element-atom {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes wipe1 {
+  0% {
+    top: 100%;
+    height: 1px;
+  }
+  50% {
+    bottom: 0;
+    top: 0;
+    height: 100vh;
+  }
+  70% {
+    bottom: 0;
+    height: 100vh;
+  }
+  100% {
+    bottom: 100%;
+    top: 0;
+    height: 0;
+  }
+}
+
+@keyframes wipe {
+  0% {
+    top: 100%;
+    height: 1px;
+  }
+  50% {
+    bottom: 0;
+    top: 0;
+    height: 100vh;
+  }
+  90% {
+    bottom: 0;
+    height: 100vh;
+  }
+  100% {
+    bottom: 100%;
+    top: 0;
+    height: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes full-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.interactive-wrapper {
+  position: relative;
+
+  .timeline {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: 10;
+    margin-left: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box;
+
+    @include mq($from: desktop) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .timeline-placeholder {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      &:after {
+        display: block;
+        content: '';
+        position:absolute;
+        background-color: #ff4e36;
+        height: 5px;
+        width: 0;
+        animation-name: full-width;
+        animation-delay: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-duration: 0.5s;
+        display: none;
+
+        @include mq($from: desktop) {
+          display: block;
+        }
+      }
+
+      .dots {
+        width: auto;
+        height: 3px;
+        margin-right: 1px;
+        flex-basis: 10%;
+        transform: translateY(-35%);
+        position: relative;
+        z-index: 10;
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        background-color: rgba(255,255,255,0.5);
+
+        @include mq($from: desktop) {
+          width: 15px;
+          height: 15px;
+          flex-basis: unset;
+          border-radius: 50%;
+          background-color: #ff4e36;
+        }
+
+        &:hover {
+          border: 5px solid #ff4e36;
+          transform: translateY(-38%);
+        }
+
+        &.on {
+          height: 3px;
+          width: 100%;
+          flex-basis: 10%;
+          background-color: #fff;
+
+          @include mq($from: desktop) {
+            width: 18px;
+            height: 18px;
+            flex-basis: unset;
+            background-color: #fff;
+            border: 5px solid #ff4e36;
+            transform: translateY(-38%);
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    z-index: 100;
+
+    .left, .right {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ff4e36;
+      cursor: pointer;
+
+      svg {
+        width: 60%;
+        margin-left: 23%;
+        margin-right: 15%;
+        margin-top: 10px;
+        height:auto;
+      }
+    }
+
+    .left {
+      margin-right: 10px;
+      transform: scale(-1);
+    }
+  }
+}
+
+.election-image-carousel {
+  overflow: hidden;
+  height: 700px; /* Fallback for browsers that do not support Custom Properties */
+  height: 400px;
+  width: 100%;
+  background-color: #333;
+
+  .animated-panel-one {
+    width: 100%;
+    height: 1px;
+    background-color: #c70000;
+    position: absolute;
+    bottom: 0;
+    animation-name: wipe1;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 20;
+  }
+  .animated-panel-two {
+    width: 100%;
+    height: 1px;
+    background-color: #ab0613;
+    position: absolute;
+    bottom: 0;
+    animation-name: wipe;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 20;
+  }
+
+  .headline-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-sizing: border-box;
+
+    .caption {
+      max-width: 100%;
+      background-color: #333;
+      padding-left: 6px;
+      padding-top: 6px;
+      padding-bottom: 12px;
+      padding-right: 6px;
+      overflow: hidden;
+      height: 14px;
+
+      &.display {
+        height: auto;
+      }
+
+      @include mq($from: desktop) {
+        max-width: 100%;
+        height: auto;
+      }
+
+      small, cite {
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.2;
+        font-family: $f-sans-serif-text;
+
+        strong {
+          font-family: $f-sans-serif-text;
+          font-weight: 900;
+          display: block;
+          font-size: 14px;
+          line-height: 1.2;
+          margin-bottom: 10px;
+          display: block;
+
+          svg {
+            width: 15px;
+            height: auto;
+            margin-left: 6px;
+
+            path {
+              fill: #fff;
+            }
+          }
+
+          @include mq($from: desktop) {
+            display: none;
+          }
+        }
+      }
+
+      cite {
+        display: block;
+        font-style: normal;
+        font-weight: 900;
+      }
+    }
+
+    h1 {
+      color: #fff;
+      font-family: "Guardian Titlepiece";
+      font-size: 20px;
+      line-height: 0.9;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      max-width: 600px;
+    }
+
+    h2 {
+      color: #fff;
+      font-family: "Guardian Titlepiece";
+      font-size: 8.8vw;
+      line-height: 1;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+      margin-bottom: 12px;
+
+      @include mq($from: desktop) {
+        font-size: 8vw;
+        line-height: 0.9;
+      }
+
+      @include mq($from: wide) {
+        font-size: 100px;
+      }
+    }
+
+    h3 {
+      font-size: 16px;
+      line-height: 1.2;
+      margin-top: 30px;
+      max-width: 320px;
+      color: #fff;
+      margin-bottom: 0;
+      display: none;
+
+      @include mq($from: desktop) {
+      font-size: 20px;
+      margin-top: 30px;
+      max-width: 300px;
+      display: block;
+      }
+    }
+
+    cite {
+      font-style: normal;
+      color: #fff;
+      font-weight: 600;
+      font-family: "Guardian Headline Full";
+      max-width: 300px;
+      display: block;
+      font-size: 16px;
+      line-height: 1.2;
+      margin-top: 20px;
+
+      @include mq($from: desktop) {
+      font-size: 20px;
+      max-width: 320px;
+      margin-top: 0;
+      }
+    }
+  }
+
+  .slide {
+    width: 100%;
+    height: 700px; /* Fallback for browsers that do not support Custom Properties */
+    height: 400px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &:nth-child(1) {
+      .headline-container {
+        .caption {
+          height: 36px;
+          h1 {
+            margin-bottom: 6px;
+            margin-top: 0;
+          }
+
+          &.display {
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .date {
+      position: absolute;
+      top: 40px;
+      left: 10px;
+      width: calc(100% - 10px);
+      z-index: 10;
+
+      @include mq($from: desktop) {
+        top: 60px;
+        left: unset;
+        width: 100%;
+      }
+
+      h1, h2 {
+        color: #fff;
+        font-family: "Guardian Titlepiece";
+        font-variant-numeric: lining-nums;
+        line-height: 1;
+        margin: 0;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+
+      img {
+        width: 64px;
+        height: auto;
+        object-fit: contain;
+        position: relative;
+      }
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+
+    .overlay-window {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      background-color: rgba(0,0,0,0);
+      z-index: 1;
+    }
+
+    &.display {
+      opacity: 1;
+
+      .headline-container h1 {
+        opacity: 1;
+      }
+      .headline-container h2 {
+        opacity: 1;
+        animation-name: fade-out;
+        animation-duration: 0.5s;
+        animation-delay: 1.75s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        padding-left: 6px;
+        box-sizing: border-box;
+
+        @include mq($from: desktop) {
+          padding-left: unset;
+        }
+      }
+
+      .overlay-window {
+        animation-name: fade-out;
+        animation-duration: 0.5s;
+        animation-delay: 1.75s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      animation-name: fade;
+      animation-duration: 0.5s;
+      animation-delay: 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      opacity: 0;
+
+      &.left {
+        object-position: left;
+      }
+    }
+  }
+}
+
+.top-banner-ad-container {
+  display: none !important;
+}
+
+.share-button {
+.meta__extras {
+  border-top: 0;
+
+  .social-icon {
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+}
+}
+
+.ios, .android {
+  padding: 0;
+
+  .interactive-atom {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .element-atom {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .share-button {
+    display: none;
+  }
+
+  .election-image-carousel {
+    width: 100% !important;
+    height: 80vh !important;
+
+    .slide {
+      height: 80vh !important;
+    }
+  }
+
+  .headline-container {
+    h1 {
+      font-size: 36px;
+      line-height: 1;
+    }
+  }
+}
