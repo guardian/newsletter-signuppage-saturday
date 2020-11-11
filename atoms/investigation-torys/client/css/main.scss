@@ -551,3 +551,19 @@
     }
   }
 }
+
+
+.mobile {
+  display:block;
+  @include mq(inline-desktop) {
+    display:none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @include mq(inline-desktop) {
+    display: block;
+  }
+}
