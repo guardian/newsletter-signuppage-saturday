@@ -9,7 +9,7 @@
 }
 
 $purple: #7D0068;
-$cream: #DDDBD1;
+$cream: #e7d4b9;
 
 
 .eoy-thrasher__wrapper {
@@ -64,14 +64,13 @@ $cream: #DDDBD1;
       img {
         width: 100%;
         height: auto;
-        margin-top: -70px;
 
         @include mq($from: desktop) {
-          margin-top: -70px;
+          object-fit: cover;
+          height: 100%;
         }
 
         @include mq($from: wide) {
-          margin-top: -116px;
           width: 80%;
         }
       }

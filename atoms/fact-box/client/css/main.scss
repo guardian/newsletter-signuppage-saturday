@@ -54,11 +54,17 @@ $cream: #DDDBD1;
     position: relative;
 
     .image-wrapper {
+      height: 55vw;
+      overflow: hidden;
+
+      @include mq($from: 660px) {
+        height: 38vw;
+      }
+
       @include mq($from: desktop) {
         position: absolute;
         top: -6px;
         bottom: -18px;
-        overflow: hidden;
       }
 
       img {
@@ -132,6 +138,7 @@ $cream: #DDDBD1;
 
 .ticker {
   margin-top: 20px;
+  height: 72px;
 }
 
 .ticker__values {
