@@ -6,7 +6,7 @@
 .interactive-atom {
     margin: 0;
     padding: 0;
-    background-color: #dfe4e6;
+    background-color: #fbfaf8;
 }
 
 .element-atom {
@@ -18,16 +18,7 @@
   .immersive-image {
     height: 90vh;
     position: relative;
-
-    @include mq($from: desktop) {
-      margin-left: 170px;
-      width: calc(100% - 170px);
-    }
-
-    @include mq($from: wide) {
-      margin-left: 240px;
-      width: calc(100% - 240px);
-    }
+    width: 100%;
 
     img {
       object-fit: cover;
@@ -44,14 +35,6 @@
     z-index: 10;
     position: relative;
     border-left: 1px solid #121212;
-
-    @include mq($from: desktop) {
-      margin-left: 170px;
-    }
-
-    @include mq($from: wide) {
-      margin-left: 240px;
-    }
 
     h1 {
       font-family: "Guardian Titlepiece";
@@ -70,7 +53,13 @@
 
       span {
         display: block;
-        color: #c70000;
+        width: max-content;
+        color: #121212;
+        background-color: #ffe500;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-bottom: 6px;
+        padding-right: 10px;
       }
     }
 
@@ -85,11 +74,11 @@
       .byline {
         font-size: inherit;
         display: block;
-        color: #c70000;
+        color: #271a4a;
         margin-top: 6px;
 
         a {
-          color: #c70000;
+          color: #271a4a;
         }
       }
 
@@ -104,53 +93,37 @@
 .element-atom + script + p {
   padding: 0 10px;
   max-width: 600px;
-
-  @include mq($from: desktop) {
-    margin-left: 9.375rem;
-  }
-
-  @include mq($from: wide) {
-    margin-left: 14.375rem;
-  }
 }
 
 .element-atom + script + p + figure + p{
   padding: 0 10px;
   max-width: 600px;
-
-  @include mq($from: desktop) {
-    margin-left: 9.375rem;
-  }
-
-  @include mq($from: wide) {
-    margin-left: 14.375rem;
-  }
 }
 
 .element-atom + script + h2 {
   padding-left: 10px;
   font-family: "Guardian Titlepiece";
+}
 
-  @include mq($from: desktop) {
-    margin-left: 9.375rem;
-  }
+p + h2 {
+  padding: 0 10px;
+  font-size: 32px;
 
-  @include mq($from: wide) {
-    margin-left: 14.375rem;
+  &:before {
+    background-image: url('https://uploads.guim.co.uk/2020/12/03/lines_above.png');
+    width: 200px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    content: '';
+    margin-top: 50px;
   }
 }
 
 p {
   padding: 0 10px;
   max-width: 600px;
-
-  @include mq($from: desktop) {
-    margin-left: 9.375rem;
-  }
-
-  @include mq($from: wide) {
-    margin-left: 14.375rem;
-  }
 
   &:first-of-type:first-letter {
     font-size: 112px;
@@ -219,16 +192,6 @@ blockquote {
   &.inView {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  @include mq($from: desktop) {
-    margin-left: 9.375rem;
-    flex-direction: row-reverse;
-    margin-bottom: 50px;
-  }
-
-  @include mq($from: wide) {
-    margin-left: 14.375rem;
   }
 
   img {
@@ -425,4 +388,9 @@ figure[data-canonical-url] {
 
 .meta__extras {
   max-width: 600px;
+}
+
+.content__main-column.modified {
+  margin-right: 0;
+  max-width: 1070px;
 }
