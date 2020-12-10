@@ -1,0 +1,39 @@
+@import "fonts";
+@import "mq";
+@import "palette";
+// @import "enhancer";
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+.graph-atom {
+    width:100%;
+    height:100%;
+    svg {
+        width:100%;
+        height:100%;
+    }
+    // p+figure {
+    //     .ele::before {
+    //         content: '';
+    //         height: 1px;
+    //         width: 100vw;
+    //         position: absolute;
+    //         left: 0;
+    //         background-color: #121212;
+    //     }
+    // }
+}
+
+[data-atom-id="interactives/2020/12/year-of-covid/graph-atom"] {
+    &::before {
+        content: '';
+        height: 1px;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        background-color: #121212;
+    }
+}
