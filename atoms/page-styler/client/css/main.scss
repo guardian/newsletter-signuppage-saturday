@@ -45,3 +45,37 @@
         }
     }
 }
+
+figure.element-atom {
+  padding: 0;
+  margin: 0;
+}
+
+.numbers {
+  position: absolute;
+  width: 633px;
+
+  .big-numbers {
+    font-family:"Guardian Titlepiece";
+    font-size: 19.8vh;
+    line-height: 0.8;
+    text-align: right;
+    font-variant-numeric: lining-nums;
+  }
+}
+
+.covid-time {
+  height: 95vh;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.flex {
+  display: flex;
+}
