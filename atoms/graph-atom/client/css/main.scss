@@ -31,9 +31,9 @@
     &::before {
         content: '';
         height: 1px;
-        width: 100vw;
         position: absolute;
-        left: -40vw;
+        left: -100vw;
+        right:-100vw;
         background-color: #121212;
         top: -12px;
     }
