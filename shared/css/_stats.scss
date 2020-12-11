@@ -10,6 +10,9 @@
 
 .interactive-wrapper {
     .pull-out-stat {
+        @include mq(desktop) {
+            margin-left:10px;
+        }
         &::before {
             content:'';
             width:1px;
