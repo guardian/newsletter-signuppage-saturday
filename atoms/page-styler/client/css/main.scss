@@ -71,15 +71,15 @@
             }
 
             h2 {
-              &:after {
-                content: '';
-                width: 1px;
-                top: 0;
-                bottom: 0;
-                background-color: #121212;
-                position: absolute;
-                margin-left: -10px;
-              }
+              // &:after {
+              //   content: '';
+              //   width: 1px;
+              //   top: 0;
+              //   bottom: 0;
+              //   background-color: #121212;
+              //   position: absolute;
+              //   margin-left: -10px;
+              // }
             }
         }
     }
