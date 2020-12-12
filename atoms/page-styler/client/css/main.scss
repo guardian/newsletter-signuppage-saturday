@@ -49,6 +49,7 @@
                     line-height:125%;
                     font-weight:200;
                     padding:0 0 0 0 !important;
+                    border-left: none !important;
                 }
             }
             p+h2 {
@@ -59,9 +60,9 @@
                 right: 0;
                 background-color: #121212;
                 position: absolute;
-                margin-top: -8px;
+                margin-top: -1px;
                 @include mq(tablet) {
-                  left:20px;
+                  left:10px;
                   right:20px;
                 }
               }
@@ -97,6 +98,7 @@ figure.element-atom {
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 10;
 
   @include mq($from: desktop) {
     flex-direction: row;
@@ -116,11 +118,59 @@ figure.element-atom {
     line-height: 0.8;
     text-align: left;
     font-variant-numeric: lining-nums;
+    position: relative;
+    color: #000;
 
     @include mq($from: desktop) {
       width: 43vw;
       text-align: right;
       font-size: 19.8vh;
+    }
+
+    &.roundone {
+      &:after {
+        content: 'minutes';
+      }
+    }
+    &.roundtwo {
+      &:after {
+        content: 'hours';
+      }
+    }
+    &.roundthree {
+      &:after {
+        content: 'days';
+      }
+    }
+    &.roundfour {
+      &:after {
+        content: 'weeks';
+      }
+    }
+    &.roundfive {
+      &:after {
+        content: 'months';
+      }
+    }
+    &.roundsix {
+      &:after {
+        content: 'year';
+        display: none;
+      }
+    }
+
+    &:after {
+      content: 'something here';
+      display: inline-block;
+      font-family:"Guardian Titlepiece";
+      font-size: 2vh;
+      letter-spacing: 1px;
+      color: #ffe500;
+      position: absolute;
+      top: 14px;
+      margin-left: 10px;
+      width: max-content;
+      text-transform: uppercase;
     }
   }
 }
@@ -144,10 +194,20 @@ figure.element-atom {
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .covid-time {
   height: 88vh;
   width: 100%;
   position: relative;
+  overflow: hidden;
+  background-color: #000;
 
   @include mq($from: desktop) {
     height: 95vh;
@@ -167,10 +227,19 @@ figure.element-atom {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: -239px;
+    object-position: -177px;
+    opacity: 0;
+    z-index: 0;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+
 
     @include mq($from: desktop) {
-      object-position: center;
+      object-position: 0;
+      width: calc(100% + 639px);
     }
   }
 }
@@ -179,8 +248,67 @@ figure.element-atom {
   display: none;
 }
 
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .body-content {
+  h2 {
+    @include mq($from: desktop) {
+      border-left: 1px solid #121212 !important;
+    }
+  }
   p {
-    border-left: 1px solid #121212 !important;
+
+    padding-bottom: 20px !important;
+    margin-bottom: 0;
+
+    @include mq($from: desktop) {
+      border-left: 1px solid #121212 !important;
+    }
+  }
+  .timecounter {
+    padding-left: 10px;
+    padding-bottom: 0px;
+
+    @include mq($from: desktop) {
+      border-left: 1px solid #121212 !important;
+    }
+
+    &:before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: #121212;
+      display: inline-block;
+      margin-right: 6px;
+      border-radius: 50%;
+      animation-name: flash;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+    }
+
+    span {
+      margin-right: 10px;
+      font-family: $f-sans-serif-text;
+    }
+  }
+}
+
+.pull-out-stat {
+  h1{
+    margin-bottom: 6px !important;
+  }
+  p {
+    border-left: 0 !important;
   }
 }
