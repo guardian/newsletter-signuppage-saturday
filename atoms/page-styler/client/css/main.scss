@@ -96,6 +96,7 @@ figure.element-atom {
   bottom: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @include mq($from: desktop) {
     flex-direction: row;
@@ -104,6 +105,10 @@ figure.element-atom {
 
 .numbers {
   width: 100%;
+
+  @include mq($from: desktop) {
+    width: 43vw;
+  }
 
   .big-numbers {
     font-family:"Guardian Titlepiece";
@@ -123,8 +128,20 @@ figure.element-atom {
 .headline {
   color: #fff;
   font-family:"Guardian Titlepiece";
-  position: absolute;
-  bottom: 10px;
+  position: relative;
+
+  h1, h2 {
+    @include mq($from: desktop) {
+      position: absolute;
+      bottom: 35px;
+      width: 390px;
+    }
+  }
+
+  h2 {
+    bottom: 6px;
+    color: #fff;
+  }
 }
 
 .covid-time {
@@ -136,7 +153,7 @@ figure.element-atom {
     height: 95vh;
   }
 
-  h1 {
+  h1, h2 {
     line-height: 1.1;
     margin-left: 10px;
 
@@ -155,5 +172,15 @@ figure.element-atom {
     @include mq($from: desktop) {
       object-position: center;
     }
+  }
+}
+
+.top-banner-ad-container {
+  display: none;
+}
+
+.body-content {
+  p {
+    border-left: 1px solid #121212 !important;
   }
 }
