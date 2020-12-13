@@ -346,3 +346,30 @@ figure.element-atom {
     }
   }
 }
+
+
+.ios, .android {
+  .gs-container {
+    .content__meta-container {
+      display:none;
+    }
+    .body-content {
+      h2 {
+        padding-bottom: 0;
+        margin-bottom:16px;
+      }
+      p {
+        margin-top: 4px;
+        padding-bottom:8px!important;
+      }
+      [data-atom-id="interactives/2020/12/year-of-covid/stat-1"],
+      [data-atom-id="interactives/2020/12/year-of-covid/stat-2"],
+      [data-atom-id="interactives/2020/12/year-of-covid/stat-3"] {
+        border-top: 1px solid #121212;
+        h1 {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
