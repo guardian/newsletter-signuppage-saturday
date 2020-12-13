@@ -97,11 +97,13 @@ figure.element-atom {
   bottom: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   z-index: 10;
 
   @include mq($from: desktop) {
     flex-direction: row;
+    justify-content: unset;
   }
 }
 
@@ -114,7 +116,7 @@ figure.element-atom {
 
   .big-numbers {
     font-family:"Guardian Titlepiece";
-    font-size: 15vh;
+    font-size: 12vh;
     line-height: 0.8;
     text-align: left;
     font-variant-numeric: lining-nums;
@@ -310,5 +312,37 @@ figure.element-atom {
   }
   p {
     border-left: 0 !important;
+  }
+}
+
+.l-footer {
+  display: block !important;
+}
+
+.content__meta-container {
+  margin-left: 0 !important;
+  padding-left: 10px;
+
+  @include mq($from: tablet) {
+    padding-left: 20px;
+  }
+
+  @include mq($from: desktop) {
+    padding-left: 10px;
+  }
+
+  @include mq($from: leftCol) {
+    padding-left: 0;
+  }
+}
+
+.social__item {
+  .inline-icon {
+    background-color: #ffe500;
+  }
+  svg {
+    path {
+    fill: #121212;
+    }
   }
 }
