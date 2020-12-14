@@ -270,7 +270,7 @@ figure.element-atom {
   }
   p {
 
-    padding-bottom: 20px !important;
+    padding-bottom: 10px !important;
     margin-bottom: 0;
 
     @include mq($from: desktop) {
@@ -280,9 +280,11 @@ figure.element-atom {
   .timecounter {
     padding-left: 10px;
     padding-bottom: 0px;
+    margin-bottom:8px;
 
     @include mq($from: desktop) {
       border-left: 1px solid #121212 !important;
+      margin-bottom:0;
     }
 
     &:before {
