@@ -12,7 +12,8 @@ const file = require("gulp-file");
 sass.compiler = require("node-sass");
 const browserSync = require("browser-sync");
 const AWS = require('aws-sdk');
-
+const autoprefixer = require('autoprefixer')
+const postcss = require('gulp-postcss')
 const browser = browserSync.create();
 const cleanCSS = require('gulp-clean-css');
 const es = require('event-stream');
@@ -139,6 +140,7 @@ const buildCSS = () => {
             path: assetPath,
             atomPath: `<%= atomPath %>`
         }))
+        .pipe(postcss([autoprefixer()]))
         .pipe(isDeploy ? cleanCSS({ compatibility: 'ie8' }) : gutil.noop())
         .pipe(dest(".build"))
         .pipe(browser.stream({
