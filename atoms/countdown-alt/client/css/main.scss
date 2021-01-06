@@ -1,0 +1,216 @@
+@import "fonts";
+@import "mq";
+@import "palette";
+// @import "enhancer";
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+$purple: #7D0068;
+$cream: #DDDBD1;
+
+
+.eoy-thrasher__wrapper {
+  background-color: $cream;
+  padding: 10px;
+  padding-top: 6px;
+  padding-bottom: 18px;
+
+  @include mq($from: desktop) {
+    padding: 20px;
+    padding-top: 6px;
+    padding-bottom: 18px;
+  }
+
+  &.colourChange {
+    background-color: #e7d5b8;
+  }
+
+  .g-roundel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    svg {
+      width: 40px;
+      height: auto;
+    }
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include mq($from: desktop) {
+      flex-direction: row;
+    }
+
+    .left, .right {
+      @include mq($from: desktop) {
+        width: 50%;
+      }
+    }
+  }
+
+  .right {
+    position: relative;
+
+    @include mq($from: desktop) {
+      min-height: 360px;
+    }
+
+    .image-wrapper {
+      @include mq($from: desktop) {
+        position: absolute;
+        top: -6px;
+        bottom: -18px;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-top: -70px;
+
+        @include mq($from: desktop) {
+          margin-top: -70px;
+        }
+
+        @include mq($from: wide) {
+          margin-top: -116px;
+          width: 80%;
+        }
+
+        &.pulldown {
+          @include mq($from: wide) {
+            margin-top: -80px;
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1;
+    margin-top: 0;
+    font-family: $f-titlepiece;
+
+    @include mq($from: desktop) {
+      font-size: 50px;
+    }
+
+    span {
+      color: $purple;
+      display: block;
+    }
+  }
+  h2 {
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: $f-sans-serif-text;
+    max-width: 100%;
+    margin-top: 10px;
+
+    @include mq($from: desktop) {
+      max-width: 80%;
+    }
+  }
+}
+.eoy-main-ctas {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      text-decoration: none;
+    }
+
+    .g-button {
+      background-color: #121212;
+      color: #fff;
+      padding: 8px 18px 8px 18px;
+      border-radius: 25px;
+      margin-right: 10px;
+      font-family: $f-sans-serif-text;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $purple;
+        color: #fff;
+      }
+    }
+}
+
+.ticker {
+  margin-top: 20px;
+}
+
+.ticker__values {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include mq($from: desktop) {
+    max-width: 80%;
+  }
+}
+
+.contributed {
+  color: $purple;
+  font-size: 24px;
+}
+
+.goal-line {
+  position: absolute;
+  width: 2px;
+  background-color: #121212;
+  top: -10px;
+  bottom: 0;
+  right: 25%;
+}
+
+.goal, .contributed  {
+  margin-right: 10px;
+  font-family: $f-titlepiece;
+  line-height: 1;
+
+  span {
+    display: block;
+    font-family: $f-sans-serif-text;
+  }
+}
+
+.goal {
+  text-align: right;
+}
+
+.progress {
+  background-color: #fff;
+  height: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+
+  @include mq($from: desktop) {
+    max-width: 80%;
+  }
+
+  .progress-animation {
+    background-color: $purple;
+    height: 10px;
+    transition: all ease-in-out 1s;
+    transition-delay: 2s;
+    width: 0;
+  }
+}
+
+.ticker {
+  display: none;
+}
+
+.eoy-main-ctas {
+  margin-top: 16px;
+}
