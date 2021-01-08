@@ -1,0 +1,282 @@
+// @import "template";
+
+@import "fonts";
+@import "mq";
+@import "palette";
+// @import "_embed";
+// @import "enhancer";
+
+$mq-breakpoints: (mobile: 320px,
+    mobileMedium: 355px,
+    mobileLandscape: 480px,
+    phablet: 660px,
+    tablet: 740px,
+    desktop: 980px,
+    leftCol: 1140px,
+    wide: 1300px,
+    support-desktop: 300px,
+    support-wide: 380px,
+    tweakSize: 410px,
+    inline-mobileLandscape: 440px,
+    inline-desktop: 620px);
+
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+
+.kicker-box {
+    background-color: white;
+    border-top: 1px solid #121212;
+    border-bottom: 1px solid #121212;
+
+    &__header {
+        margin-top: 0;
+
+        &__headline {
+            font-family: "Guardian Headline Full";
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 115%;
+            color: #121212;
+            margin: 0;
+            padding: 2px 0 16px 8px;
+        }
+    }
+
+    &__content {
+        // padding-left: 10px;
+        cursor: pointer;
+        z-index: 10;
+
+        .content-block {
+            display: flex;
+            flex-direction: row-reverse;
+            border-top: 1px solid #dcdcdc;
+            line-height: 115%;
+            justify-content: space-between;
+            text-decoration: none;
+            padding-left: 8px;
+            color: #121212 !important;
+            min-height: 90px;
+
+            @include mq(inline-desktop) {
+                min-height: 102px;
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+
+
+        .left-content {
+            // display: flex;
+        }
+
+        .content-image {
+            width: 75px;
+            height: 75px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            margin-top: 4px;
+            margin-right: 4px;
+            margin-left: 10px;
+
+
+            @include mq(phablet) {
+                width: 90px;
+                height: 90px;
+            }
+
+            &__1 {
+                background-image: url('https://media.guim.co.uk/fa952123c4d4fc120711d68c4e395360a1b9a2a7/0_149_638_383/500.jpg');
+            }
+
+            &__2 {
+                background-image: url('https://media.guim.co.uk/8b635352feed8a31abd50b0fb17118c1cbc8e0eb/0_117_3504_2102/500.jpg');
+            }
+
+            &__3 {
+                background-image: url('https://media.guim.co.uk/b177c42057f82c7e4dbff167eb107d5f6160d4c3/0_477_1028_617/500.jpg');
+            }
+
+            &__4 {
+                background-image: url('https://media.guim.co.uk/20e224368694f02db1d63ef736934da6690cbd92/0_50_3500_2101/500.jpg');
+            }
+
+            &__podcast {
+                width: 20px;
+                height: 20px;
+                margin-right: 4px;
+
+                svg {
+                    path {
+                        fill: #999999;
+                    }
+                }
+            }
+        }
+
+        .content-news,
+        .content-analysis {
+            background-color: #f6f6f6;
+            border-top: 1px solid #c70000;
+            transition: background-color 0.5s;
+
+            &:hover {
+                background-color: rgba($color: #dcdcdc, $alpha: 0.8);
+            }
+        }
+
+        .content-opinion {
+            border-top: 1px solid #e05e00;
+            background-color: #fef9f5;
+
+            .blog-type {
+                .kicker {
+                    color: #e05e00;
+                }
+            }
+
+            &:hover {
+                background-color: rgba($color: #f9b376, $alpha: 0.3);
+                transition: background-color 0.5s;
+            }
+        }
+
+        .content-podcast {
+            background-color: #121212;
+
+            .blog-type {
+                color: #fff !important;
+
+                .kicker {
+                    color: #ff4e36;
+                }
+            }
+
+            &:hover {
+                background-color: #333333;
+                transition: background-color 0.5s;
+            }
+        }
+
+        .content-analysis {
+            border-top: 1px solid #c70000;
+        }
+
+        .content-podcast {
+            border-top: 1px solid #ff4e36;
+
+            .podcast {
+                color: #999999;
+            }
+
+            .podcast-wrapper {
+                display: inline-flex;
+                margin-top: 4px;
+            }
+        }
+
+        .blog-type {
+            font-family: "Guardian Headline Full";
+            font-size: 17px;
+            line-height: 115%;
+            font-weight: 500;
+            margin-top: 1px;
+            display: inline-block;
+            color: #121212 !important;
+            text-decoration: none;
+            margin-bottom: 0;
+
+            @include mq(inline-desktop) {
+                font-size: 20px;
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .content-type {
+            font-family: GuardianTextSans,
+                Guardian Text Sans Web,
+                Helvetica Neue,
+                Helvetica,
+                Arial,
+                Lucida Grande,
+                sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            // color: #121212;
+            color: #767676;
+            /* background-color: #121212; */
+            /* padding: 0 4px; */
+            display: inline-block;
+            margin-top: 0px;
+            margin-bottom: 12px;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    .kicker {
+        font-weight: 700;
+        color: #c70000;
+    }
+
+    .content-opinion {}
+
+    // .opinion {
+    //     color: #E05E00;
+    //     color: #999999;
+    // }
+
+    // .podcast {
+    //     color: #ff4e36;
+
+    // }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .live-links {
+        .ios & {
+            background-color: #121212;
+            border-top: 1px solid #bb3b80;
+            border-bottom: 1px solid #bb3b80;
+
+            &__header {
+                &__headline {
+                    color: #f37abc;
+                }
+            }
+
+            .content-block {
+                border-top: 1px solid #dcdcdc;
+                color: #dcdcdc !important;
+
+                svg circle {
+                    stroke: #dcdcdc;
+                }
+
+                svg path {
+                    stroke: #dcdcdc;
+                }
+
+                &:hover svg circle {
+                    stroke: #bb3b80;
+                }
+
+                &:hover svg path {
+                    fill: #bb3b80;
+                }
+            }
+        }
+    }
+}
