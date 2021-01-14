@@ -45,6 +45,7 @@
     }
 
     @include mq(tablet) {
+      top: 300px;
     }
     @include mq(desktop) {
       width: 980px;
@@ -173,6 +174,13 @@
   .byline {
     border-top: none !important;
     margin-top: 5px;
+  }
+}
+
+.content__head {
+    @include mq(phablet) {
+      margin-left: 0px;
+      margin-right: 0px;
   }
 }
 
