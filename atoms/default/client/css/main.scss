@@ -570,3 +570,10 @@
     }
   }
 }
+
+
+.trump-date-line {
+  @include mq(desktop) {
+    margin-top: 16px!important;
+  }
+}
