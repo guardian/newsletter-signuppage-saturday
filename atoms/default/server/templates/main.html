@@ -1,1 +1,119 @@
-<div class="interactive-wrapper">HTML</div>
+
+
+<div class="interactive-wrapper">
+    <div class="pb-wrapper">
+        {{#Header}}
+        <div class="pb-header ">
+            <div class="gs-container pb-container">
+                <div class="pb-header__wrapper">
+                    <div class="pb-header__text">
+                        <a href="{{tagUrl}}">{{tag}}</a>
+                        <h1>{{headline}}</h1>
+                        <h1><span>{{month}}</span></h1>
+                        <h2>{{standfirst}} <span>by {{byline}}</span></h2>
+                        <div class="show-desktop">
+                            <div class="pb-meta">
+                                <p>{{date}}</p>
+                                <p>share</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pb-header__images">
+                        <div class="pb-header__images__inner">
+                            {{#Content}}
+                            <img src="{{bookCoverUrl}}" alt="">
+                            {{/Content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/Header}}
+        <div class="pb-content gs-container pb-container">
+            <div class="pb-left show-desktop" data-current=''>
+                {{#Content}}
+                <div class="pb-left__block-wrapper" data-name="{{bookName}}">
+                    <a class="block-anchor" href="#{{bookName}}"></a>
+                    <div class="pb-left__block">
+                        <div class="pb-left__image">
+                            <img src="{{bookCoverUrl}}" alt="">
+                        </div>
+                        <div class="pb-left__text">
+                            <div>
+                                <p class="genre-tag show-desktop">{{genreTag}}</p>
+                                <h3>{{bookName}}</h3>
+                                <h3 class="pb-name">{{authorName}}</h3>
+                            </div>
+                            <a class="pb-arrow">
+                                <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.69415 26.0817L14.0425 13.7333L14.0425 12.43L1.69415 0.0816631L0.456054 1.35234L10.035 13.0817L0.456055 24.811L1.69415 26.0817ZM14.7267 26.0817L27.0751 13.7333L27.0751 12.43L14.7267 0.0816625L13.4886 1.35234L23.0676 13.0817L13.4886 24.811L14.7267 26.0817Z" fill="#121212"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/Content}}
+
+            </div>
+            <div class="pb-right">
+                <div class="show-mobile">
+                    <div class="pb-meta">
+                        <p>{{date}}</p>
+                        <p>share</p>
+                    </div>
+                </div>
+                {{#Content}}
+                <div id="{{bookName}}" class="pb-right__block content-block" data-name="{{bookName}}">
+                    <div class="show-mobile">
+                        <div class="mobile-book-title">
+                            <div class="pb-mobile__image">
+                                <img src="{{bookCoverUrl}}" alt="">
+                            </div>
+                            <div class="pb-mobile__text">
+                                <p class="genre-tag">{{genreTag}}</p>
+                                <h2 class="pb-right__block__standfirst">{{bookHeadline}}</h2>
+                                <h3>{{bookName}}</h3>
+                                <h3 class="pb-name">{{authorName}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-drawer">
+                        
+                        <h2 class="pb-right__block__title show-desktop">{{bookName}} <span>{{authorName}}</span></h2>
+                        <h2 class="pb-right__block__standfirst show-desktop">{{bookHeadline}}</h2>
+                        <img class="{{imageSize}} show-desktop" src="{{imageUrl}}" alt="">
+                        <img class="{{imageSize}} show-mobile" src="{{imageUrl}}" alt="">
+                        <p class="pb-right__block__paragraph">{{bodyText}}</p>
+                        <p class="pb-right__block__byline">{{byline}}</p>
+                        {{#price}}
+                        <a href="{{bookshopUrl}}">{{price}} - {{buyFrom}}</a>
+                        {{/price}}
+                    </div>
+                    <a class="pb-plus show-mobile">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5987 13.5643L11.0583 24.163H12.7076L13.1943 13.5643L23.793 13.0776V11.4283L13.1943 10.9687L12.7076 0.369965L11.0583 0.369965L10.5987 10.9687L0 11.4283L0 13.0776L10.5987 13.5643Z" fill="#121212"/>
+                        </svg>
+                    </a>
+                </div>
+                {{#id}}
+                <div class="interactive-ad-banner show-advert">
+                    <div class="ad-wrapper--desktop hide-until-tablet">
+                        <div id="dfp-ad--{{id}}"
+                        class="js-ad-slot ad-slot ad-slot--banner-ad ad-slot--banner-ad-desktop ad-slot--rendered"
+                        data-link-name="ad slot banner" data-name="banner" data-tablet="1,1|2,2|300,250"
+                        data-desktop="1,1|2,2|88,70|300,250"></div>
+                    </div>
+
+                    <div class="ad-wrapper--mobile mobile-only">
+                        <div id="dfp-ad--inline{{id}}--mobile" class="js-ad-slot ad-slot ad-slot--inline ad-slot--inline{{id}}"
+                        data-link-name="ad slot inline{{id}}Mobile" data-name="inline{{id}}Mobile"
+                        data-mobile="1,1|2,2|300,250|fluid"></div>
+                    </div>
+                </div>
+                {{/id}}
+                {{/Content}}
+            </div>
+        </div>
+        
+    </div>
+</div>
