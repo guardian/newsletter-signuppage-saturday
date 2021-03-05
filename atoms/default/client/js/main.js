@@ -23,44 +23,35 @@ setTimeout(() => {
 
 
 
+// // get json from page
 // function findJson() {
 //   const pAll = document.querySelectorAll('p');
+//   console.log(pAll)
+//   let jsonUrl
 //   pAll.forEach((p) => {
 //     if (p.innerText.indexOf('interactive.guim.co.uk/docsdata')>=0) {
-//       const jsonUrl = p.innerText.trim();
-//       p.remove();
-//       return jsonUrl;
+//       jsonUrl = p.innerText.trim();
+//       // p.remove();
+//       console.log(jsonUrl)
 //     }
-//   })  
+//   })
+//   return jsonUrl;
 // }
-// // findJson()
-// console.log(findJson())
+// const jsonUrlTest = findJson()
 
 
-
+// // add content
 // import xr from "xr";
-// import blocksTemplate from "../templates/blocks.html";
+// import blocksTemplate from "../../server/templates/main.html!text";
 // import Mustache from "mustache";
 
 // var el = document.createElement("script");
 // el.src = "<%= path %>/app.js";
 // document.body.appendChild(el);
 
-// xr.get(
-//   "https://interactive.guim.co.uk/docsdata-test/1D5AqIM0mJn-7rYtbKjV7McltGI2Z8VZZ0yATACN8L08.json"
-// ).then((resp) => {
+// xr.get(jsonUrlTest.then((resp) => {
 //   var sheets = resp.data.sheets;
 //   var html = Mustache.render(blocksTemplate, sheets);
 
 //   return html;
-// });
-// var el = document.createElement("script");
-// el.src = "<%= path %>/app.js";
-// document.body.appendChild(el);
-
-// xr.get(jsonUrl).then((resp) => {
-//   var sheets = resp.data.sheets;
-//   var html = Mustache.render(blocksTemplate, sheets);
-
-//   return html;
-// });
+// }))

@@ -47,10 +47,12 @@ function scrollIndexTo (block) {
       if (thisBlockName == targetBlockName) {
         highlightCurrentIndex(indexBlock)
         currentBlock.dataset.current = targetBlockName
-        currentBlock.scrollTo({
-          top: indexBlock.offsetTop,
-          behavior: 'smooth'
-        });
+        setTimeout (() => {
+          currentBlock.scrollTo({
+            top: indexBlock.offsetTop,
+            behavior: 'smooth'
+          });
+        }, 500)
 
       }
     })
@@ -86,6 +88,8 @@ function highlightCurrentIndex(i) {
   }
   i.querySelector('.block-anchor').classList.add('hover')
 }
+
+
 
 
 
