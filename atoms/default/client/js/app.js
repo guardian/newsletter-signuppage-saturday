@@ -59,7 +59,7 @@ function scrollIndexTo (block) {
   }
 }
 
-document.addEventListener('mousewheel', () => {
+document.addEventListener('wheel', () => {
   updateIndex()
 })
 
