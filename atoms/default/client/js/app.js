@@ -59,9 +59,27 @@ function scrollIndexTo (block) {
   }
 }
 
-document.addEventListener('wheel', () => {
+// debounce function
+const debounce = (func, wait) => {
+  let timeout;
+
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
+var debouncedUpdateIndex = debounce(function() {
   updateIndex()
-})
+}, 200);
+
+window.addEventListener('wheel', debouncedUpdateIndex);
+
 
 const anchorButton = document.querySelectorAll('.block-anchor')
 
