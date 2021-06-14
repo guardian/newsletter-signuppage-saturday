@@ -7,3 +7,86 @@
     margin: 0;
     padding: 0;
 }
+
+.interactive-wrapper {
+    .header {
+        position: relative;
+    }
+    .mainmedia {
+        img {
+            max-width:620px;
+        }
+    }
+    .headline {
+        position:sticky;
+        bottom:-26px;
+        margin-top: -100px;
+        p {
+            background-color:yellow;
+            // padding:4px;
+            width: max-content;
+            margin:0;
+            margin-left: 6px;
+        }
+        .tag {
+            background-color: #6B5840;
+            color: #FFFFFF;
+            font-family: GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 700;
+            box-shadow: 0.25rem 0 0 #6B5840, -0.375rem 0 0 #6B5840;
+            margin-bottom:-4px;
+        }
+
+        .byline {
+            font-size: 1.25rem;
+            line-height: 1.4375rem;
+            font-family: "Guardian Egyptian Web",Georgia,serif;
+            font-weight: normal;
+            font-style: italic;
+            font-weight: 500;
+            background-color: #ffe500;
+            box-shadow: 0.375rem 0 0 #ffe500, -0.375rem 0 0 #ffe500;
+            color: #121212;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.1875rem;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            font-family: GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;
+            line-height:115%;
+            margin-left: 6px;
+            margin-bottom:6px;
+            color:white;
+            background-color: #121212;
+            position: relative;
+            white-space: pre-wrap;
+            padding-bottom: 4px;
+            padding-right: 4px;
+            padding-top: 4px;
+            box-shadow: -6px 0 0 #121212;
+            box-decoration-break: clone;
+            display: inline;
+        }
+    }
+    .gs-container {
+        border-left: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+        box-sizing: border-box;
+    }
+    .content__main-column {
+        &::before {
+            content:'';
+            position:absolute;
+            width:1px;
+            top: 0;
+            bottom:-15px;
+            left: -10px;
+            background-color: #dcdcdc;
+        }
+    }
+}
+
+
