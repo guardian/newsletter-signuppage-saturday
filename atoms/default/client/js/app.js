@@ -56,7 +56,7 @@ const rightContent = document.querySelectorAll(".content__body-wrapper--right")
 const mobileWidth = window.matchMedia('(max-width: 739px)')
 
 // Update left column
-const setLeftRootMargin = () => mobileWidth.matches ? "15% 0px -20% 0px" : "15% 0px -55% 0px"
+const setLeftRootMargin = () => mobileWidth.matches ? "10% 0px -50% 0px" : "-5% 0px -65% 0px"
 const optionsLeft = {
     rootMargin: setLeftRootMargin(),
     threshold: 0.2
@@ -76,7 +76,7 @@ for (i = 0; i < leftContent.length; i++) {
 
 
 // Update right column
-const setRightRootMargin = () => mobileWidth.matches ? "50% 0px -40% 0px" : "10% 0px -75% 0px"
+const setRightRootMargin = () => mobileWidth.matches ? "10% 0px -50% 0px" : "-5% 0px -75% 0px"
 const optionsRight = {
     rootMargin: setRightRootMargin(),
     threshold: 0.2
@@ -101,13 +101,17 @@ for (i = 0; i < leftContent.length; i++) {
 
 
 // Open byline 'about drawer'
-const bylineInfoWrapper = document.querySelector(".content__byline-wrapper--right--about-content")
+const bylineInfoWrapper = document.querySelectorAll(".content__byline-wrapper--right--about-content")
 const toggle = document.querySelector(".toggle")
 
 toggle.addEventListener("click", () => {
-    if (!bylineInfoWrapper.classList.contains("openMe")) {
-        bylineInfoWrapper.classList.add("openMe")
-    } else {
-        bylineInfoWrapper.classList.remove("openMe")
+    for (i = 0; i < bylineInfoWrapper.length; i++) {
+        if (!bylineInfoWrapper[i].classList.contains("openMe")) {
+            bylineInfoWrapper[i].classList.add("openMe")
+            toggle.classList.add("openMe")
+        } else  {
+            bylineInfoWrapper[i].classList.remove("openMe")
+            toggle.classList.remove("openMe")
+        }
     }
 })

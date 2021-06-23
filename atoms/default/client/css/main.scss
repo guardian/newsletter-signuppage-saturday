@@ -8,12 +8,17 @@ $primaryTextColor: #121212;
 $secondaryTextColor:#787878;
 $backgroundColor:#fef9f5;
 $opinionMain:#e05e00;
+$opinionDark:#bd5318;
 $leftColumnWidth: 160px;
-$lineColor:#dcdcdc;
+$lineColor:#767676;
 
 .interactive-atom {
     margin: 0;
     padding: 0;
+}
+
+figure.element {
+    margin-top: 0;
 }
 
 .interactive-wrapper {
@@ -51,15 +56,21 @@ $lineColor:#dcdcdc;
     .right-column {
         flex: 1;
         position: relative;
-        padding-left: 10px;
-        &::before {
-            content:'';
-            width: 1px;
-            position: absolute;
-            background-color: $lineColor;
-            top: 0px;
-            bottom: -6px;
-            left: 0px;
+        @include mq(tablet) {
+            padding-left: 10px;
+        }
+        @include mq(leftCol) {
+            &.leftcol-border {
+                &::before {
+                    content:'';
+                    width: 1px;
+                    position: absolute;
+                    background-color: $lineColor;
+                    top: -140px;
+                    bottom: 0px;
+                    left: 0px;
+                }
+            }
         }
     }
 
@@ -73,7 +84,10 @@ $lineColor:#dcdcdc;
 
         &__tag {
             margin:0 0 0 10px;
-            @include mq(desktop) {
+            z-index: 30;
+            position: absolute;
+            @include mq(tablet) {
+                position: relative;
                 margin:0;
             }
             p {
@@ -81,12 +95,21 @@ $lineColor:#dcdcdc;
                 font-weight: 700;
                 font-size:18px;
                 margin-top: 8px;
-                color: $opinionMain;
+                color: white;
+                @include mq(tablet) {
+                    color: $opinionMain;
+                }
             }
         }
         &__top-wrapper {
+            display: flex;
+            flex-direction: column-reverse;
+            @include mq(tablet) {
+                flex-direction: column;
+            }
             
             &--mainmedia {
+                height: 75vh;
                 @include mq(desktop) {
                     margin-left: -10px;
                 }
@@ -97,20 +120,43 @@ $lineColor:#dcdcdc;
                 }
             }
             &--headline {
-                margin:0 0 40px 10px;
-                padding-top: 8px;
-                width: 70%;
-                @include mq(desktop) {
+                margin:0 10px 32px 10px;
+                @include mq(tablet) {
+                    width: 70%;
                     margin:0 0 40px 0;
+                    padding-top: 6px;
                 }
                 h1 {
                     font-family: $f-headline-full;
-                    font-size:28px;
+                    font-size:36px;
                     line-height:115%;
                     color: $primaryTextColor;
                     font-weight: 100;
+                    position: relative;
+                    margin-left: 10px;
+                    &::before {
+                        content:'';
+                        width: 1px;
+                        position: absolute;
+                        left: -10px;
+                        top: 0;
+                        bottom: 6px;
+                        background-color: #767676;
+                    }
                     @include mq(tablet) {
                         font-size:44px;
+                        border: none;
+                        padding-left: 0;
+                        margin-left: 0;
+                        &::before {
+                            content:'';
+                            width: 1px;
+                            position: absolute;
+                            left: -10px;
+                            top: -6px;
+                            bottom: 6px;
+                            background-color: #767676;
+                        }
                     }
                 }
             }
@@ -134,22 +180,38 @@ $lineColor:#dcdcdc;
         &--standfirst {
             font-family: $f-headline-full;
             font-size: 24px;
-            line-height: 135%;
+            line-height: 125%;
             color: $primaryTextColor;
-            width: 75%;
+            width: 80%;
             margin: 4px 0 40px 0;
             font-weight: 100;
+            @include mq(tablet) {
+                width: 65%;
+            }
         }
 
         &__share-container {
+            @include mq(leftCol) {
+                margin-top: 8px;
+            }
+            @include mq(wide) {
+                margin-top: 24px;
+            }
             .content__meta-container {
                 position:relative;
                 margin-left:0;
+                margin-bottom: 0;
+                // width: 100%;
                 .inline-share-facebook, .inline-share-twitter, .inline-share-email {
                     background-color: $backgroundColor;
                     border: 1px solid #dcdcdc;
                     svg {
                         fill: $opinionMain;
+                    }
+                }
+                .meta__extras {
+                    @include mq(leftCol) {
+                        border-top: 0.0625rem solid #767676;
                     }
                 }
             }
@@ -175,16 +237,16 @@ $lineColor:#dcdcdc;
                 }
                 h2 {
                     font-family: $f-headline-full;
-                    font-size:28px;
+                    font-size:24px;
                     line-height:115%;
                     color: $primaryTextColor;
                     font-weight: 100;
                     transition: all 0.3s ease;
-                    width: 100%;
                     @include mq(tablet) {
                         width: max-content;
+                        font-size: 32px;
                     }
-                    @include mq(tablet) {
+                    @include mq(desktop) {
                         font-size: 40px;
                     }
                     span {
@@ -209,6 +271,17 @@ $lineColor:#dcdcdc;
                         cursor: pointer;
                         svg {
                             transform: translateY(0px);
+                        }
+                    }
+                    &.openMe {
+                        svg {
+                            transform:rotate(180deg);
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        svg {
+                            transform: translateY(-4px) rotate(180deg);
+                        }
                         }
                     }
                     
@@ -239,6 +312,10 @@ $lineColor:#dcdcdc;
                     height: 0;
                     overflow: hidden;
                     display: flex;
+                    margin-top: -19px;
+                    @include mq(tablet) {
+                        margin-top: 0;
+                    }
                     p {
                         // width: 40%;
                         margin-right: 10px;
@@ -246,6 +323,10 @@ $lineColor:#dcdcdc;
                         margin-bottom: 24px;
                         &:nth-child(1) {
                             margin-left: 0;
+                            margin-top: 7px;
+                            @include mq(tablet) {
+                                margin-top: 0;
+                            }
                         }
                         &:nth-child(2) {
                             position: relative;
@@ -257,17 +338,35 @@ $lineColor:#dcdcdc;
                                 background-color: $lineColor;
                                 top: 0px;
                                 bottom: -24px;
-                                left:-10px;
+                                left:-11px;
                             }
                         }
+                        @include mq(tablet) {
+                            width: calc(50% - 10px);
+                        }
+
                     }
                     &.openMe {
                         height:100%;
                         top: 40px;
+                        margin-top: 0;
                         *~.content__byline-wrapper--right {
                             h2 {
                                 opacity: 1!important;
                             }
+                        }
+                        &.show-desktop {
+                            display:none;
+                            @include mq(tablet) {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                    &.show-mobile {
+                        display:flex;
+                        @include mq(tablet) {
+                            display:none;
                         }
                     }
                 }
@@ -287,6 +386,7 @@ $lineColor:#dcdcdc;
                 img {
                     width: 80%;
                     height: 80%;
+                    border-radius: 500px;
                 }
                 p {
                     font-family: $f-headline-full;
@@ -294,62 +394,81 @@ $lineColor:#dcdcdc;
                     font-size: 24px;
                     line-height: 115%;
                     color: $opinionMain;
+                    margin-top: 8px;
                 }
-                &__quote:before {
-                    content:'';
-                    display: inline;
-                    width: 20px;
-                    height: 20px;
-
+                &__quote {
+                    svg {
+                        width: 24px;
+                        margin-right: 4px;
+                    }
                 }
             }
             &--left, &--right {
+                margin-bottom: 80px;
                 @include mq(tablet) {
                     width: calc(50% - 10px);
+                    margin-bottom: 0;
+                }
+                img {
+                    width: 100%;
+                    @include mq(tablet) {
+                        width: calc(200% + 20px);
+                    }
+                }
+                figcaption {
+                    display: block;
+                    width: 100%;
+                    font-family: GuardianTextSans,Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    font-weight: 400;
+                    word-wrap: break-word;
+                    color: #767676;
+                    @include mq(tablet) {
+                        width: 200%;
+                    }
                 }
             }
             &--left {
                 position: relative;
-                margin-bottom: 44px;
+                // margin-bottom: 44px;
+                &:nth-child(1) {
+                    margin-top: 0;
+                }
                 @include mq(tablet) {
                     margin-bottom:0;
+                    margin-top: -81px;
                 }
                 .float-wrapper {
                     float:left;
-                    // @include mq(leftCol) {
-                    //     float:unset;
-                    //     position: absolute;
-                    //     left: calc(100% + 20px);
-                    // }
                 }
             }
             &--right {
                 position: relative;
                 .float-wrapper {
                     float:left;
-                    // @include mq(leftCol) {
-                    //     float:unset;
-                    //     position: absolute;
-                    //     right: calc(100% + 20px);
-                    // }
                 }
                 @include mq(tablet) {
                     margin-left: calc(50% + 10px);
-                    margin-top: -128px;
+                    margin-top: -81px;
+                    &:nth-last-child(1) {
+                        padding-bottom: 80px;
+                    }
+                    &::before {
+                        content:'';
+                        width: 1px;
+                        position: absolute;
+                        background-color: $lineColor;
+                        top: 8px;
+                        bottom: 0;
+                        left:-10px;
+                    }
                 }
-                &::before {
-                    content:'';
-                    width: 1px;
-                    position: absolute;
-                    background-color: $lineColor;
-                    top: 8px;
-                    bottom: -6px;
-                    left:-10px;
-                }
+                
             }
             &--dropcap {
-                font-size: 114px;
-                line-height: 91px;
+                font-size: 81px;
+                line-height: 69px;            
                 color:$opinionMain;
                 float:left;
                 vertical-align: text-top;
