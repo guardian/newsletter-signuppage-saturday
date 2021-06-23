@@ -4,7 +4,361 @@
 @import "palette";
 // @import "enhancer";
 
+$primaryTextColor: #121212;
+$secondaryTextColor:#787878;
+$backgroundColor:#fef9f5;
+$opinionMain:#e05e00;
+$leftColumnWidth: 160px;
+$lineColor:#dcdcdc;
+
 .interactive-atom {
     margin: 0;
     padding: 0;
 }
+
+.interactive-wrapper {
+    background-color: $backgroundColor;
+}
+
+.head-to-head {
+    .show-desktop {
+        display:none;
+        @include mq(tablet) {
+            display:flex;
+        }
+    }
+    .show-mobile {
+        display:flex;
+        @include mq(tablet) {
+            display:none;
+        }
+    }
+    .responsive-flex {
+        display:flex;
+        flex-direction: column;
+        @include mq(leftCol) {
+            flex-direction: row;
+        }
+    }
+    .left-column {
+        @include mq(leftCol) {
+            width: 150px;
+        }
+        @include mq(wide) {
+            width:230px;
+        }
+    }
+    .right-column {
+        flex: 1;
+        position: relative;
+        padding-left: 10px;
+        &::before {
+            content:'';
+            width: 1px;
+            position: absolute;
+            background-color: $lineColor;
+            top: 0px;
+            bottom: -6px;
+            left: 0px;
+        }
+    }
+
+    .header {
+        @include mq(desktop) {
+            margin:0 20px;
+        }
+        @include mq(leftCol) {
+            margin:0 0 0 20px;
+        }
+
+        &__tag {
+            margin:0 0 0 10px;
+            @include mq(desktop) {
+                margin:0;
+            }
+            p {
+                font-family: $f-headline-full;
+                font-weight: 700;
+                font-size:18px;
+                margin-top: 8px;
+                color: $opinionMain;
+            }
+        }
+        &__top-wrapper {
+            
+            &--mainmedia {
+                @include mq(desktop) {
+                    margin-left: -10px;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &--headline {
+                margin:0 0 40px 10px;
+                padding-top: 8px;
+                width: 70%;
+                @include mq(desktop) {
+                    margin:0 0 40px 0;
+                }
+                h1 {
+                    font-family: $f-headline-full;
+                    font-size:28px;
+                    line-height:115%;
+                    color: $primaryTextColor;
+                    font-weight: 100;
+                    @include mq(tablet) {
+                        font-size:44px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .content {
+        margin: 0 10px;
+        @include mq(desktop) {
+            margin: 0 20px;
+        }
+        .sticky {
+            position:sticky;
+            position:-webkit-sticky;
+            top: 0px;
+        }
+        .inView {
+            color:black;
+        }
+
+        &--standfirst {
+            font-family: $f-headline-full;
+            font-size: 24px;
+            line-height: 135%;
+            color: $primaryTextColor;
+            width: 75%;
+            margin: 4px 0 40px 0;
+            font-weight: 100;
+        }
+
+        &__share-container {
+            .content__meta-container {
+                position:relative;
+                margin-left:0;
+                .inline-share-facebook, .inline-share-twitter, .inline-share-email {
+                    background-color: $backgroundColor;
+                    border: 1px solid #dcdcdc;
+                    svg {
+                        fill: $opinionMain;
+                    }
+                }
+            }
+        }
+        
+        &__byline-wrapper {
+            display:flex;
+            flex-wrap: wrap;
+            border-bottom: $lineColor 1px solid;
+            background-color: $backgroundColor;
+            z-index: 10;
+            @include mq(tablet) {
+                margin-left: -9px;
+                padding-left: 10px;
+            }
+            &--left, &--right {
+                display:flex;
+                justify-content: space-between;
+                align-items: baseline;
+                flex-wrap: wrap;
+                @include mq(tablet) {
+                    width: calc(50% - 10px);
+                }
+                h2 {
+                    font-family: $f-headline-full;
+                    font-size:28px;
+                    line-height:115%;
+                    color: $primaryTextColor;
+                    font-weight: 100;
+                    transition: all 0.3s ease;
+                    width: 100%;
+                    @include mq(tablet) {
+                        width: max-content;
+                    }
+                    @include mq(tablet) {
+                        font-size: 40px;
+                    }
+                    span {
+                        color:$primaryTextColor;
+                    }
+                }
+                .toggle {
+                    display:flex;
+                    align-items: baseline;
+                    p {
+                        font-family: $f-headline-full;
+                        font-size:15px;
+                    }
+                    svg {
+                        margin-left: 8px;
+                        height: 6px;
+                        width: auto;
+                        transform: translateY(-4px);
+                        transition:all 0.3s ease;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        svg {
+                            transform: translateY(0px);
+                        }
+                    }
+                    
+                }
+                &.inView {
+                    h2 {
+                        color:$opinionMain;
+                    }
+                }
+            }
+            &--left {
+                margin-right: 20px;
+            }
+            &--right {
+                h2 {
+                    position: relative;
+                    &::before {
+                        content:'';
+                        width: 1px;
+                        position: absolute;
+                        background-color: $lineColor;
+                        top: 8px;
+                        bottom: -6px;
+                        left:-11px;
+                    }
+                }
+                &--about-content {
+                    height: 0;
+                    overflow: hidden;
+                    display: flex;
+                    p {
+                        // width: 40%;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                        margin-bottom: 24px;
+                        &:nth-child(1) {
+                            margin-left: 0;
+                        }
+                        &:nth-child(2) {
+                            position: relative;
+                            margin-right: 0;
+                            &::before {
+                                content:'';
+                                width: 1px;
+                                position: absolute;
+                                background-color: $lineColor;
+                                top: 0px;
+                                bottom: -24px;
+                                left:-10px;
+                            }
+                        }
+                    }
+                    &.openMe {
+                        height:100%;
+                        top: 40px;
+                        *~.content__byline-wrapper--right {
+                            h2 {
+                                opacity: 1!important;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+            
+        }
+        &__body-wrapper {
+            .float-wrapper {
+                width: 50%;
+                padding: 0 10px 0 0;
+                margin-top: 4px;
+                @include mq(tablet) {
+                    width: 180px;
+                }
+                img {
+                    width: 80%;
+                    height: 80%;
+                }
+                p {
+                    font-family: $f-headline-full;
+                    font-weight: 100;
+                    font-size: 24px;
+                    line-height: 115%;
+                    color: $opinionMain;
+                }
+                &__quote:before {
+                    content:'';
+                    display: inline;
+                    width: 20px;
+                    height: 20px;
+
+                }
+            }
+            &--left, &--right {
+                @include mq(tablet) {
+                    width: calc(50% - 10px);
+                }
+            }
+            &--left {
+                position: relative;
+                margin-bottom: 44px;
+                @include mq(tablet) {
+                    margin-bottom:0;
+                }
+                .float-wrapper {
+                    float:left;
+                    // @include mq(leftCol) {
+                    //     float:unset;
+                    //     position: absolute;
+                    //     left: calc(100% + 20px);
+                    // }
+                }
+            }
+            &--right {
+                position: relative;
+                .float-wrapper {
+                    float:left;
+                    // @include mq(leftCol) {
+                    //     float:unset;
+                    //     position: absolute;
+                    //     right: calc(100% + 20px);
+                    // }
+                }
+                @include mq(tablet) {
+                    margin-left: calc(50% + 10px);
+                    margin-top: -128px;
+                }
+                &::before {
+                    content:'';
+                    width: 1px;
+                    position: absolute;
+                    background-color: $lineColor;
+                    top: 8px;
+                    bottom: -6px;
+                    left:-10px;
+                }
+            }
+            &--dropcap {
+                font-size: 114px;
+                line-height: 91px;
+                color:$opinionMain;
+                float:left;
+                vertical-align: text-top;
+                pointer-events: none;
+                margin-right: 4px;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+
