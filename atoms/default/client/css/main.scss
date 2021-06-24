@@ -110,13 +110,27 @@ figure.element {
             
             &--mainmedia {
                 height: 75vh;
+                transition:height 0.3s ease;
+                position: relative;
                 @include mq(desktop) {
                     margin-left: -10px;
+                }
+                &:before {
+                    content:'';
+                    position: absolute;
+                    top: 0;
+                    bottom: 80%;
+                    background: linear-gradient(180deg,#12121260 0,rgba(18,18,18,0) 90%);
+                    left: 0;
+                    right: 0;
+                    @include mq(tablet) {
+                        display:none;
+                    }
                 }
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
+                    object-fit: cover;                    
                 }
             }
             &--headline {
@@ -171,7 +185,7 @@ figure.element {
         .sticky {
             position:sticky;
             position:-webkit-sticky;
-            top: 0px;
+            top: -1px;
         }
         .inView {
             color:black;
