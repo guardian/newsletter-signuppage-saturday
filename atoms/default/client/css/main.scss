@@ -4,7 +4,306 @@
 @import "palette";
 // @import "enhancer";
 
+$yellowColor: #ffe500;
+
 .interactive-atom {
     margin: 0;
     padding: 0;
+}
+
+iframe {
+    overflow: unset;
+}
+
+html {
+    overflow: unset;
+}
+
+body {
+    overflow-x: scroll;
+}
+
+.interactive-wrapper {
+    background-color: #EFF1F2;
+    .mobile-only {
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+    .desktop-only {
+        // background-color: #EFF1F2;
+        display: none;
+        @include mq(desktop) {
+            display: block;
+        }
+    }
+    .mobile-image-wrapper {
+        background-color: #EFF1F2;
+        position: relative;
+        height: 750px;
+        @include mq(mobileMedium) {
+            height: 690px;
+        }
+        @include mq(mobileLandscape) {
+            height: 650px;
+        }
+        @include mq(phablet) {
+            height: 580px;
+        }
+        @include mq(tablet) {
+            height: 560px;
+        }
+        img {
+            height: 400px;
+            width: auto;
+        }
+        svg {
+            path {
+                fill: #3F464A;
+            }
+            margin-right: 4px;
+            width: 13px;
+            height: 10px;
+        }
+        small {
+            background-color: #EFF1F2;
+            position: fixed;
+            left: 10px;
+            right: 10px;
+            font-family: $f-sans-serif-text;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
+            word-wrap: break-word;
+            color: #222527;
+            @include mq(mobileLandscape) {
+                left: 20px;
+                right: 20px;
+            }
+        }
+    }
+    .desktop-image-wrapper {
+        &--inner {
+            overflow: scroll;
+            width: 100%;
+            img {
+                height: 600px;
+                display: block;
+                @include mq(desktop) {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        small {
+            font-family: $f-sans-serif-text;
+            font-size: 12px;
+            line-height: 1.5;
+            font-weight: 400;
+            word-wrap: break-word;
+            color: #222527;
+            max-width: 620px;
+            display: block;
+            box-sizing: border-box;
+            width: 620px;
+            position: relative;
+            margin-left: 20px;
+            @include mq(leftCol) {
+                margin-left: 160px;
+            }
+            @include mq(wide) {
+                margin-left: 240px;
+            }
+            svg {
+                path {
+                    fill: #3F464A;
+                }
+                width: 9px;
+                height: 9px;
+                margin-right: 4px;
+            }
+            @include mq(leftCol) {
+                &:before {
+                    content:'';
+                    width: 1px;
+                    background-color: #dcdcdc;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -11px;
+                }
+            }
+        }
+        
+    }
+    .roll-overs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        .circle {
+            width: 40px;
+            height: 40px;
+            border: 2px solid $yellowColor;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            @include mq(leftCol) {
+                width: 45px;
+                height: 45px;
+            }
+            @include mq(wide) {
+                width: 50px;
+                height: 50px;
+            }
+            &:hover {
+                // background-color: rgba($color: #ffffff, $alpha: 0.4);
+                // border: 4px solid yellow;
+                // margin: -1.5px;
+                cursor: pointer;
+            }
+            &:hover ~.name {
+                opacity: 1;
+            }
+        }
+        .name {
+            // position: absolute;
+            // z-index: 10;
+            font-family:$f-sans-serif-text;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-color: #121212;
+            color: white;
+            padding: 4px;
+            border-top: 1px solid $yellowColor;
+            transform: translateX(-50%);
+            margin-top: 4px;
+        }
+
+        .hover {
+            position: absolute;
+            // .wrapper {
+            //     position: relative;
+            // }
+            &-one {
+                top: 150px;
+                left: 104px;
+            }
+            &-two {
+                top: 140px;
+                left: 260px;
+            }
+            &-three {
+                top: 148px;
+                left: 293px;
+            }
+            &-four {
+                top: 140px;
+                left: 363px;
+            }
+            &-five {
+                top: 143px;
+                left: 455px;
+            }
+            &-six {
+                top: 141px;
+                left: 548px;
+            }
+            &-seven {
+                top: 170px;
+                left: 599px;
+            }
+            &-eight {
+                top: 140px;
+                left: 609px;
+            }
+            &-nine {
+                top: 137px;
+                left: 731px;
+            }
+        }
+        .hover {
+            position: absolute;
+            @include mq(leftCol) {
+                &-one {
+                    top: 168px;
+                    left: 117px;
+                }
+                &-two {
+                    top: 155px;
+                    left: 292px;
+                }
+                &-three {
+                    top: 166px;
+                    left: 330px;
+                }
+                &-four {
+                    top: 157px;
+                    left: 406px;
+                }
+                &-five {
+                    top: 160px;
+                    left: 510px;
+                }
+                &-six {
+                    top: 160px;
+                    left: 614px;
+                }
+                &-seven {
+                    top: 191px;
+                    left: 673px;
+                }
+                &-eight {
+                    top: 157px;
+                    left: 682px;
+                }
+                &-nine {
+                    top: 152px;
+                    left: 819px;
+                }
+            }
+        }
+        .hover {
+            position: absolute;
+            @include mq(wide) {
+                &-one {
+                    top: 193px;
+                    left: 136px;
+                }
+                &-two {
+                    top: 179px;
+                    left: 333px;
+                }
+                &-three {
+                    top: 189px;
+                    left: 379px;
+                }
+                &-four {
+                    top: 178px;
+                    left: 466px;
+                }
+                &-five {
+                    top: 183px;
+                    left: 584px;
+                }
+                &-six {
+                    top: 181px;
+                    left: 701px;
+                }
+                &-seven {
+                    top: 219px;
+                    left: 769px;
+                }
+                &-eight {
+                    top: 179px;
+                    left: 783px;
+                }
+                &-nine {
+                    top: 175px;
+                    left: 938px;
+                }
+            }
+        }
+    }
 }
