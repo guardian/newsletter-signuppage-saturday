@@ -40,18 +40,18 @@ body {
     .mobile-image-wrapper {
         background-color: #EFF1F2;
         position: relative;
-        height: 750px;
+        height: 624px;
         @include mq(mobileMedium) {
-            height: 690px;
-        }
-        @include mq(mobileLandscape) {
-            height: 650px;
-        }
-        @include mq(phablet) {
             height: 580px;
         }
+        @include mq(mobileLandscape) {
+            height: 558px;
+        }
+        @include mq(phablet) {
+            height: 515px;
+        }
         @include mq(tablet) {
-            height: 560px;
+            height: 495px;
         }
         img {
             height: 400px;
@@ -158,9 +158,6 @@ body {
                 height: 50px;
             }
             &:hover {
-                // background-color: rgba($color: #ffffff, $alpha: 0.4);
-                // border: 4px solid yellow;
-                // margin: -1.5px;
                 cursor: pointer;
             }
             &:hover ~.name {
@@ -169,8 +166,6 @@ body {
             }
         }
         .name {
-            // position: absolute;
-            // z-index: 10;
             font-family:$f-sans-serif-text;
             opacity: 0;
             visibility: hidden;
@@ -185,36 +180,69 @@ body {
 
         .hover {
             position: absolute;
-            // .wrapper {
-            //     position: relative;
-            // }
             &-one {
-                top: 142px;
-                left: 100px;
+                top: 211px;
+                left: 141px;
             }
             &-two {
-                top: 134px;
-                left: 250px;
+                top: 185px;
+                left: 203px;
             }
             &-three {
-                top: 134px;
-                left: 347px;
+                top: 158px;
+                left: 250px;
             }
             &-four {
-                top: 136px;
-                left: 525px;
+                top: 164px;
+                left: 370px;
             }
             &-five {
-                top: 163px;
-                left: 575px;
+                top: 146px;
+                left: 436px;
             }
             &-six {
-                top: 133px;
-                left: 587px;
+                top: 192px;
+                left: 467px;
             }
             &-seven {
-                top: 142px;
-                left: 632px;
+                top: 160px;
+                left: 506px;
+            }
+            &-eight {
+                top: 130px;
+                left: 530px;
+            }
+            &-nine {
+                top: 187px;
+                left: 545px;
+            }
+            &-ten {
+                top: 143px;
+                left: 585px;            
+            }
+            &-eleven {
+                top: 165px;
+                left: 631px;
+            }
+            &-twelve {
+                top: 131px;
+                left: 635px;
+            }
+            &-thirteen {
+                top: 171px;
+                left: 669px;
+            }
+            &-fourteen {
+                top: 163px;
+                left: 767px;
+            }
+            &-fifteen {
+                top: 173px;
+                left: 806px;
+            }
+            &-sixteen {            
+                top: 201px;
+                left: 875px;
             }
 
         }
@@ -222,68 +250,138 @@ body {
             position: absolute;
             @include mq(leftCol) {
                 &-one {
-                    top: 168px;
-                    left: 117px;
+                    top: 243px;
+                    left: 163px;
                 }
                 &-two {
-                    top: 155px;
-                    left: 292px;
+                    top: 214px;
+                    left: 235px;
                 }
                 &-three {
-                    top: 156px;
-                    left: 404px;
+                    top: 214px;
+                    left: 235px;
                 }
                 &-four {
-                    top: 157px;
-                    left: 608px;
-                }
-                &-five {    
                     top: 190px;
-                    left: 667px;
+                    left: 429px;
+                }
+                &-five {
+                    top: 169px;
+                    left: 506px;
                 }
                 &-six {
-                    top: 155px;
-                    left: 676px;
+                    top: 222px;
+                    left: 541px;
                 }
                 &-seven {
-                    top: 169px;
-                    left: 731px;
+                    top: 187px;
+                    left: 587px;
                 }
-
+                &-eight {
+                    top: 150px;
+                    left: 612px;
+                }
+                &-nine {
+                    top: 217px;
+                    left: 630px;
+                }
+                &-ten {
+                    top: 166px;
+                    left: 677px;
+                }
+                &-eleven {
+                    top: 191px;
+                    left: 729px;
+                }
+                &-twelve {
+                    top: 151px;
+                    left: 734px;
+                }
+                &-thirteen {
+                    top: 199px;
+                    left: 774px;
+                }
+                &-fourteen {
+                    top: 188px;
+                    left: 889px;
+                }
+                &-fifteen {
+                    top: 201px;
+                    left: 934px;
+                }
+                &-sixteen {
+                    top: 232px;
+                    left: 1013px;
+                }
             }
         }
         .hover {
             position: absolute;
             @include mq(wide) {
                 &-one {
-                    top: 193px;
-                    left: 136px;
+                    top: 282px;
+                    left: 186px;
                 }
                 &-two {
-                    top: 179px;
-                    left: 333px;
+                    top: 248px;
+                    left: 271px;
                 }
                 &-three {
-                    top: 180px;
-                    left: 467px;
+                    top: 213px;
+                    left: 335px;
                 }
                 &-four {
-                    top: 182px;
-                    left: 703px;
+                    top: 220px;
+                    left: 497px;
                 }
-                &-five {
-                    top: 217px;
-                    left: 771px;
+                &-five {                
+                    top: 197px;
+                    left: 584px;
                 }
                 &-six {
-                    top: 181px;
-                    left: 783px;
+                    top: 258px;
+                    left: 627px;
                 }
                 &-seven {
-                    top: 194px;
-                    left: 848px;
+                    top: 215px;
+                    left: 678px;
                 }
-
+                &-eight {
+                    top: 175px;
+                    left: 709px;                
+                }
+                &-nine {
+                    top: 252px;
+                    left: 729px;
+                }
+                &-ten {
+                    top: 194px;
+                    left: 785px;
+                }
+                &-eleven {
+                    top: 222px;
+                    left: 844px;
+                }
+                &-twelve {
+                    top: 175px;
+                    left: 849px;
+                }
+                &-thirteen {
+                    top: 230px;
+                    left: 896px;
+                }
+                &-fourteen {
+                    top: 220px;
+                    left: 1030px;                
+                }
+                &-fifteen {
+                    top: 234px;
+                    left: 1081px;
+                }
+                &-sixteen {
+                    top: 270px;
+                    left: 1172px;                
+                }
             }
         }
     }
