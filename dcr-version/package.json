@@ -1,0 +1,22 @@
+{
+  "name": "dcr-version",
+  "version": "0.1.0",
+  "description": "Starter kit for Guardian interactives",
+  "main": "index.js",
+  "scripts": {
+    "build": "./esbuild.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guardian/interactive-atom-template-2019.git"
+  },
+  "author": "nicolas.long@theguardian.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/guardian/interactive-atom-template-2019/issues"
+  },
+  "homepage": "https://github.com/guardian/interactive-atom-template-2019#readme",
+  "dependencies": {
+    "esbuild": "^0.12.20"
+  }
+}
