@@ -14,9 +14,7 @@
             <div class="sleeve-notes-email saturday-email  email-form">
                 <div class="email-signup email-signup__lozenge" data-component="email-embed--inside-saturday">
                   
-                    <!-- <iframe id="tech-scape" name="tech-scape" src="https://www.theguardian.com/email/form/plaintone/tech-scape" scrolling="no" seamless="" class="iframed--overflow-hidden email-sub__iframe" height="52px" frameborder="0" data-component="email-embed--tech-scape"></iframe> -->
-
-                  <iframe id="inside-saturday" name="inside-saturday" src="https://www.theguardian.com/email/form/plaintone/inside-saturday" scrolling="no" seamless="" class="iframed--overflow-hidden email-sub__iframe" height="52px" frameborder="0" data-component="email-embed--inside-saturday"></iframe>
+                    <iframe id="inside-saturday" name="inside-saturday" src="https://www.theguardian.com/email/form/plaintone/inside-saturday" scrolling="no" seamless="" class="iframed--overflow-hidden email-sub__iframe" height="52px" frameborder="0" data-component="email-embed--inside-saturday"></iframe>
 
                     <div class="email-signup__aside-text">
                         <span>No spam ever. Unsubscribe in one click.</span>
@@ -38,24 +36,26 @@
                 <div class="body__onwards--inner">
                     {{#Onward}}
                     <div class="card">
-                        <div class="card__image">
-                            <img src="{{imageUrl}}" alt="">
-                        </div>
-                        
-                        <div class="card__content">
-                            <h3 class="card__content-title">{{newsletterName}}</h3>
-                            <p class="card__content-body">{{bodyText}}</p>
-                            <!-- <p class="card__content--date">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="{{newsletterUrl}}">
+                            <div class="card__image">
+                                <img src="{{imageUrl}}" alt="">
+                            </div>
+                            
+                            <div class="card__content">
+                                <h3 class="card__content-title">{{newsletterName}}</h3>
+                                <p class="card__content-body">{{bodyText}}</p>
+                                <!-- <p class="card__content--date">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 10C20 15.5227 15.5227 20 10 20C4.47727 20 0 15.5227 0 10C0 4.47727 4.47727 0 10 0C15.5227 0 20 4.47727 20 10ZM11.0909 9.68182L10.4318 1.81819H9.54548L8.86367 10.3409L10.0228 11.5L16.3637 10.9091V10L11.0909 9.68182Z" fill="#052962"/>
+                                        </svg>{{publicationDate}}
+                                </p> -->
+                                <p class="card__content-date"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20 10C20 15.5227 15.5227 20 10 20C4.47727 20 0 15.5227 0 10C0 4.47727 4.47727 0 10 0C15.5227 0 20 4.47727 20 10ZM11.0909 9.68182L10.4318 1.81819H9.54548L8.86367 10.3409L10.0228 11.5L16.3637 10.9091V10L11.0909 9.68182Z" fill="#052962"/>
                                     </svg>{{publicationDate}}
-                            </p> -->
-                            <p class="card__content-date"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 10C20 15.5227 15.5227 20 10 20C4.47727 20 0 15.5227 0 10C0 4.47727 4.47727 0 10 0C15.5227 0 20 4.47727 20 10ZM11.0909 9.68182L10.4318 1.81819H9.54548L8.86367 10.3409L10.0228 11.5L16.3637 10.9091V10L11.0909 9.68182Z" fill="#052962"/>
-                                </svg>{{publicationDate}}
-                            </p>
-                            
-                        </div>
+                                </p>
+                                
+                            </div>
+                        </a>
                     </div>              
                     {{/Onward}}   
                 </div>

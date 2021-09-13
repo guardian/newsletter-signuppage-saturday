@@ -134,6 +134,8 @@ $borderColor: $culture-600;
                     font-size: 17px;
                     line-height: 115%;
                     color: $secondaryColor;
+
+                    
                 }
                 &__content-body {
                     font-family: $f-sans-serif-text;
@@ -154,6 +156,12 @@ $borderColor: $culture-600;
                             fill: $secondaryColor;
                         }
                     }
+                }
+                a {
+                    text-decoration: none;
+                }
+                a:hover .card__content-title {
+                    text-decoration: underline;
                 }
             }
         }
