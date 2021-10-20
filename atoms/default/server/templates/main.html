@@ -2,7 +2,9 @@
     <div class="gs-container saturday-newsletter">
         <div class="header">
             <!-- <img src="{{imageUrl}}" alt="{{imageAltText}}"> -->
-            <img src="https://media.guim.co.uk/8b426d79fd6bcd67008b93835a38c8082c03c918/0_0_6600_2336/6600.jpg" alt="woman in lounge chair reading the newspaper on her phone while she drinks a cup of tea">
+            {{#Header}}
+            <img src="{{imageUrl}}" alt="{{imageAltText}}">
+            {{/Header}}
         </div>
         <div class="body content__main-column">
             {{#Header}}
@@ -14,7 +16,10 @@
             <div class="sleeve-notes-email saturday-email  email-form">
                 <div class="email-signup email-signup__lozenge" data-component="email-embed--inside-saturday">
                   
-                    <iframe id="inside-saturday" name="inside-saturday" src="https://www.theguardian.com/email/form/plaintone/inside-saturday" scrolling="no" seamless="" class="iframed--overflow-hidden email-sub__iframe" height="52px" frameborder="0" data-component="email-embed--inside-saturday"></iframe>
+                    <iframe id="green-light" name="green-light" src="https://www.theguardian.com/email/form/plaintone/green-light"
+                        scrolling="no" seamless="" class="iframed--overflow-hidden email-sub__iframe" height="52px" frameborder="0"
+                        data-component="email-embed--green-light">
+                    </iframe>
 
                     <div class="email-signup__aside-text">
                         <span>No spam ever. Unsubscribe in one click.</span>
