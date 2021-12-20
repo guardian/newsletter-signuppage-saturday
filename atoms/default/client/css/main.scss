@@ -14,7 +14,7 @@ figure.element,
   padding: 0;
 }
 
-$backgroundColor: $culture-800;
+$backgroundColor: #F3C100;
 $primaryColor: $neutral-7;
 $secondaryColor: $culture-300;
 $borderColor: $culture-600;
@@ -23,7 +23,7 @@ $borderColor: $culture-600;
   background-color: $backgroundColor;
 }
 
-.saturday-newsletter {
+.her-stage-newsletter {
   background-color: $backgroundColor;
   @include mq(tablet) {
     border-left: 1px solid $borderColor;
@@ -226,4 +226,8 @@ $borderColor: $culture-600;
       margin-top: -2px;
     }
   }
+}
+
+#her-stage {
+  width: 100%;
 }
